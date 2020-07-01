@@ -1,0 +1,343 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1405DD1B24AC4A1100DAA3EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1405DD1A24AC4A1100DAA3EC /* AppDelegate.swift */; };
+		1405DD1D24AC4A1100DAA3EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1405DD1C24AC4A1100DAA3EC /* SceneDelegate.swift */; };
+		1405DD1F24AC4A1100DAA3EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1405DD1E24AC4A1100DAA3EC /* ViewController.swift */; };
+		1405DD2224AC4A1100DAA3EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1405DD2024AC4A1100DAA3EC /* Main.storyboard */; };
+		1405DD2424AC4A1400DAA3EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1405DD2324AC4A1400DAA3EC /* Assets.xcassets */; };
+		1405DD2724AC4A1400DAA3EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1405DD2524AC4A1400DAA3EC /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1405DD1724AC4A1100DAA3EC /* HotelIkitai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelIkitai.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1405DD1A24AC4A1100DAA3EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1405DD1C24AC4A1100DAA3EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1405DD1E24AC4A1100DAA3EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1405DD2124AC4A1100DAA3EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1405DD2324AC4A1400DAA3EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1405DD2624AC4A1400DAA3EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1405DD2824AC4A1400DAA3EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1405DD1424AC4A1100DAA3EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1405DD0E24AC4A1100DAA3EC = {
+			isa = PBXGroup;
+			children = (
+				1405DD1924AC4A1100DAA3EC /* HotelIkitai */,
+				1405DD1824AC4A1100DAA3EC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1405DD1824AC4A1100DAA3EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1405DD1724AC4A1100DAA3EC /* HotelIkitai.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1405DD1924AC4A1100DAA3EC /* HotelIkitai */ = {
+			isa = PBXGroup;
+			children = (
+				1405DD1A24AC4A1100DAA3EC /* AppDelegate.swift */,
+				1405DD1C24AC4A1100DAA3EC /* SceneDelegate.swift */,
+				1405DD1E24AC4A1100DAA3EC /* ViewController.swift */,
+				1405DD2024AC4A1100DAA3EC /* Main.storyboard */,
+				1405DD2324AC4A1400DAA3EC /* Assets.xcassets */,
+				1405DD2524AC4A1400DAA3EC /* LaunchScreen.storyboard */,
+				1405DD2824AC4A1400DAA3EC /* Info.plist */,
+			);
+			path = HotelIkitai;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1405DD1624AC4A1100DAA3EC /* HotelIkitai */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1405DD2B24AC4A1400DAA3EC /* Build configuration list for PBXNativeTarget "HotelIkitai" */;
+			buildPhases = (
+				1405DD1324AC4A1100DAA3EC /* Sources */,
+				1405DD1424AC4A1100DAA3EC /* Frameworks */,
+				1405DD1524AC4A1100DAA3EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HotelIkitai;
+			productName = HotelIkitai;
+			productReference = 1405DD1724AC4A1100DAA3EC /* HotelIkitai.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1405DD0F24AC4A1100DAA3EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Ayumu Nakashige";
+				TargetAttributes = {
+					1405DD1624AC4A1100DAA3EC = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 1405DD1224AC4A1100DAA3EC /* Build configuration list for PBXProject "HotelIkitai" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1405DD0E24AC4A1100DAA3EC;
+			productRefGroup = 1405DD1824AC4A1100DAA3EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1405DD1624AC4A1100DAA3EC /* HotelIkitai */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1405DD1524AC4A1100DAA3EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1405DD2724AC4A1400DAA3EC /* LaunchScreen.storyboard in Resources */,
+				1405DD2424AC4A1400DAA3EC /* Assets.xcassets in Resources */,
+				1405DD2224AC4A1100DAA3EC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1405DD1324AC4A1100DAA3EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1405DD1F24AC4A1100DAA3EC /* ViewController.swift in Sources */,
+				1405DD1B24AC4A1100DAA3EC /* AppDelegate.swift in Sources */,
+				1405DD1D24AC4A1100DAA3EC /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1405DD2024AC4A1100DAA3EC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1405DD2124AC4A1100DAA3EC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1405DD2524AC4A1400DAA3EC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1405DD2624AC4A1400DAA3EC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1405DD2924AC4A1400DAA3EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1405DD2A24AC4A1400DAA3EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1405DD2C24AC4A1400DAA3EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68V9SPDGA8;
+				INFOPLIST_FILE = HotelIkitai/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.developwalkdream.HotelIkitai;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1405DD2D24AC4A1400DAA3EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68V9SPDGA8;
+				INFOPLIST_FILE = HotelIkitai/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.developwalkdream.HotelIkitai;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1405DD1224AC4A1100DAA3EC /* Build configuration list for PBXProject "HotelIkitai" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1405DD2924AC4A1400DAA3EC /* Debug */,
+				1405DD2A24AC4A1400DAA3EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1405DD2B24AC4A1400DAA3EC /* Build configuration list for PBXNativeTarget "HotelIkitai" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1405DD2C24AC4A1400DAA3EC /* Debug */,
+				1405DD2D24AC4A1400DAA3EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1405DD0F24AC4A1100DAA3EC /* Project object */;
+}
