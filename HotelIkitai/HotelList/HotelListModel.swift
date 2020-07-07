@@ -50,8 +50,8 @@ class HotelListModel {
     func fetchDistance(nowLocation:CLLocation, destination: CLLocation) {
         let distance = destination.distance(from: nowLocation)
         delegate?.distanceFromNowLocation(distance: "\(distance)")
-        print("eeeeeeeee\(distance)")
     }
+    
     
     func fetchHotelListData() {
         let query = Firestore.firestore().collection("HotelList")
