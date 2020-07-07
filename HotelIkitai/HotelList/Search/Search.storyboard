@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="YrH-of-2xP">
+            <objects>
+                <viewController storyboardIdentifier="Search" id="hyr-Re-YbP" customClass="SearchViewController" customModule="HotelIkitai" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xQQ-uP-73g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bo-Ev-sOj">
+                                <rect key="frame" x="20" y="48" width="286" height="44"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search_1xpng" translatesAutoresizingMaskIntoConstraints="NO" id="U1D-5a-B9A">
+                                        <rect key="frame" x="13" y="11" width="22" height="22"/>
+                                        <color key="tintColor" red="0.56078431370000004" green="0.56078431370000004" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="lNC-PE-K8d"/>
+                                            <constraint firstAttribute="width" constant="22" id="o63-zs-ma9"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="エリアを入力 （例）渋谷" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Egy-oa-aQI">
+                                        <rect key="frame" x="43" y="0.0" width="243" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="U1D-5a-B9A" firstAttribute="leading" secondItem="3bo-Ev-sOj" secondAttribute="leading" constant="13" id="Awc-I7-92q"/>
+                                    <constraint firstItem="U1D-5a-B9A" firstAttribute="top" secondItem="3bo-Ev-sOj" secondAttribute="top" constant="11" id="HEH-dL-7gv"/>
+                                    <constraint firstAttribute="height" constant="44" id="PMJ-CW-6Bs"/>
+                                    <constraint firstAttribute="bottom" secondItem="Egy-oa-aQI" secondAttribute="bottom" id="Ufp-e3-gGW"/>
+                                    <constraint firstItem="Egy-oa-aQI" firstAttribute="top" secondItem="3bo-Ev-sOj" secondAttribute="top" id="cmY-nt-xhb"/>
+                                    <constraint firstAttribute="trailing" secondItem="Egy-oa-aQI" secondAttribute="trailing" id="gBy-Ai-gpX"/>
+                                    <constraint firstItem="Egy-oa-aQI" firstAttribute="leading" secondItem="U1D-5a-B9A" secondAttribute="trailing" constant="8" id="xnu-UH-zp8"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOp-U3-e5W">
+                                <rect key="frame" x="314" y="52" width="80" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="9oV-lX-1WK"/>
+                                    <constraint firstAttribute="height" constant="36" id="jxz-sV-yrY"/>
+                                </constraints>
+                                <state key="normal" title="キャンセル">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="hyr-Re-YbP" eventType="touchUpInside" id="dM8-rs-J8Y"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OhR-xO-2ED">
+                                <rect key="frame" x="0.0" y="122" width="414" height="740"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pvN-jV-adf">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="5O9-Kw-4oV">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hqC-jm-JwY">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="OhR-xO-2ED" firstAttribute="leading" secondItem="X5z-0g-AGZ" secondAttribute="leading" id="3Tz-C7-AWJ"/>
+                            <constraint firstItem="OhR-xO-2ED" firstAttribute="bottom" secondItem="X5z-0g-AGZ" secondAttribute="bottom" id="H2v-Pt-ikb"/>
+                            <constraint firstItem="yOp-U3-e5W" firstAttribute="top" secondItem="X5z-0g-AGZ" secondAttribute="top" constant="8" id="JpV-T0-feh"/>
+                            <constraint firstItem="OhR-xO-2ED" firstAttribute="trailing" secondItem="X5z-0g-AGZ" secondAttribute="trailing" id="KvJ-Nm-5tS"/>
+                            <constraint firstItem="X5z-0g-AGZ" firstAttribute="trailing" secondItem="yOp-U3-e5W" secondAttribute="trailing" constant="20" id="ew2-ok-K1c"/>
+                            <constraint firstItem="3bo-Ev-sOj" firstAttribute="leading" secondItem="X5z-0g-AGZ" secondAttribute="leading" constant="20" id="krn-xY-u50"/>
+                            <constraint firstItem="yOp-U3-e5W" firstAttribute="leading" secondItem="3bo-Ev-sOj" secondAttribute="trailing" constant="8" id="sqX-jW-zv1"/>
+                            <constraint firstItem="OhR-xO-2ED" firstAttribute="top" secondItem="3bo-Ev-sOj" secondAttribute="bottom" constant="30" id="tr1-Cu-rpA"/>
+                            <constraint firstItem="3bo-Ev-sOj" firstAttribute="top" secondItem="X5z-0g-AGZ" secondAttribute="top" constant="4" id="xG0-Nm-XNe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="X5z-0g-AGZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="yOp-U3-e5W" id="ieg-IF-euT"/>
+                        <outlet property="collectionView" destination="OhR-xO-2ED" id="rUX-tl-PCw"/>
+                        <outlet property="searchFrameView" destination="3bo-Ev-sOj" id="UrO-GG-TyA"/>
+                        <outlet property="searchTextField" destination="Egy-oa-aQI" id="j3L-qv-CBv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LnY-Jp-gF9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13.043478260869566" y="-23.4375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="search_1xpng" width="30" height="30"/>
+    </resources>
+</document>

@@ -3,27 +3,71 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01EF90935C9E048F1ED64A2A /* Pods_HotelIkitai.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E926744D9D4177E867801EFB /* Pods_HotelIkitai.framework */; };
 		1405DD1B24AC4A1100DAA3EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1405DD1A24AC4A1100DAA3EC /* AppDelegate.swift */; };
-		1405DD1D24AC4A1100DAA3EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1405DD1C24AC4A1100DAA3EC /* SceneDelegate.swift */; };
-		1405DD1F24AC4A1100DAA3EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1405DD1E24AC4A1100DAA3EC /* ViewController.swift */; };
-		1405DD2224AC4A1100DAA3EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1405DD2024AC4A1100DAA3EC /* Main.storyboard */; };
 		1405DD2424AC4A1400DAA3EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1405DD2324AC4A1400DAA3EC /* Assets.xcassets */; };
 		1405DD2724AC4A1400DAA3EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1405DD2524AC4A1400DAA3EC /* LaunchScreen.storyboard */; };
+		146ECA9324AC76C900E84A13 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146ECA9224AC76C900E84A13 /* HomeController.swift */; };
+		146ECA9524AC76D700E84A13 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146ECA9424AC76D700E84A13 /* HomePresenter.swift */; };
+		146ECA9724AC76E200E84A13 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146ECA9624AC76E200E84A13 /* HomeModel.swift */; };
+		146ECA9924AC76F300E84A13 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 146ECA9824AC76F300E84A13 /* Home.storyboard */; };
+		146ECA9B24AC881A00E84A13 /* HotelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146ECA9A24AC881A00E84A13 /* HotelListViewController.swift */; };
+		146ECA9D24AC883600E84A13 /* HotelListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146ECA9C24AC883600E84A13 /* HotelListPresenter.swift */; };
+		146ECA9F24AC884600E84A13 /* HotelListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146ECA9E24AC884600E84A13 /* HotelListModel.swift */; };
+		146ECAA124AC930400E84A13 /* HotelList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 146ECAA024AC930400E84A13 /* HotelList.storyboard */; };
+		146ECAAA24AD6FA000E84A13 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146ECAA924AD6FA000E84A13 /* Extension.swift */; };
+		146ECAAC24AD7F7800E84A13 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146ECAAB24AD7F7800E84A13 /* EmptyView.swift */; };
+		146ECAAE24AD7F8C00E84A13 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 146ECAAD24AD7F8C00E84A13 /* EmptyView.xib */; };
+		146ECAB024AD867900E84A13 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146ECAAF24AD867900E84A13 /* SearchViewController.swift */; };
+		146ECAB424AD94C700E84A13 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 146ECAB324AD94C700E84A13 /* Search.storyboard */; };
+		147B67A524AEE07E00DABFF0 /* HotelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B67A424AEE07E00DABFF0 /* HotelDetailViewController.swift */; };
+		147B67A724AEE09100DABFF0 /* HotelDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147B67A624AEE09100DABFF0 /* HotelDetail.storyboard */; };
+		147B67A924AEE4C800DABFF0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 147B67A824AEE4C800DABFF0 /* CoreLocation.framework */; };
+		147B67AB24AEFABF00DABFF0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 147B67AA24AEFABF00DABFF0 /* MapKit.framework */; };
+		1499C66124ADD840003F8928 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499C66024ADD840003F8928 /* R.generated.swift */; };
+		1499C66424ADDB7D003F8928 /* HotelListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499C66224ADDB7D003F8928 /* HotelListCollectionViewCell.swift */; };
+		1499C66524ADDB7D003F8928 /* HotelListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1499C66324ADDB7D003F8928 /* HotelListCollectionViewCell.xib */; };
+		1499C66724ADDC9D003F8928 /* wakamizu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1499C66624ADDC9C003F8928 /* wakamizu.jpg */; };
+		14B4E76024B429E2003A0ACE /* HotelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B4E75F24B429E2003A0ACE /* HotelItem.swift */; };
+		14D9824C24AC4FA7007205F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14D9824B24AC4FA7007205F9 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1405DD1724AC4A1100DAA3EC /* HotelIkitai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelIkitai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1405DD1A24AC4A1100DAA3EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1405DD1C24AC4A1100DAA3EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1405DD1E24AC4A1100DAA3EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1405DD2124AC4A1100DAA3EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1405DD2324AC4A1400DAA3EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1405DD2624AC4A1400DAA3EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1405DD2824AC4A1400DAA3EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		146ECA9224AC76C900E84A13 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		146ECA9424AC76D700E84A13 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		146ECA9624AC76E200E84A13 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		146ECA9824AC76F300E84A13 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		146ECA9A24AC881A00E84A13 /* HotelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelListViewController.swift; sourceTree = "<group>"; };
+		146ECA9C24AC883600E84A13 /* HotelListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelListPresenter.swift; sourceTree = "<group>"; };
+		146ECA9E24AC884600E84A13 /* HotelListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelListModel.swift; sourceTree = "<group>"; };
+		146ECAA024AC930400E84A13 /* HotelList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HotelList.storyboard; sourceTree = "<group>"; };
+		146ECAA924AD6FA000E84A13 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		146ECAAB24AD7F7800E84A13 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		146ECAAD24AD7F8C00E84A13 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
+		146ECAAF24AD867900E84A13 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		146ECAB324AD94C700E84A13 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		147B67A424AEE07E00DABFF0 /* HotelDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailViewController.swift; sourceTree = "<group>"; };
+		147B67A624AEE09100DABFF0 /* HotelDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HotelDetail.storyboard; sourceTree = "<group>"; };
+		147B67A824AEE4C800DABFF0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		147B67AA24AEFABF00DABFF0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1499C66024ADD840003F8928 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		1499C66224ADDB7D003F8928 /* HotelListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelListCollectionViewCell.swift; sourceTree = "<group>"; };
+		1499C66324ADDB7D003F8928 /* HotelListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelListCollectionViewCell.xib; sourceTree = "<group>"; };
+		1499C66624ADDC9C003F8928 /* wakamizu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wakamizu.jpg; sourceTree = "<group>"; };
+		14B4E75F24B429E2003A0ACE /* HotelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelItem.swift; sourceTree = "<group>"; };
+		14D9824B24AC4FA7007205F9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		44D94F640947E809717D1A63 /* Pods-HotelIkitai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelIkitai.debug.xcconfig"; path = "Target Support Files/Pods-HotelIkitai/Pods-HotelIkitai.debug.xcconfig"; sourceTree = "<group>"; };
+		60A6093737BCAB5798EE3A3E /* Pods-HotelIkitai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelIkitai.release.xcconfig"; path = "Target Support Files/Pods-HotelIkitai/Pods-HotelIkitai.release.xcconfig"; sourceTree = "<group>"; };
+		E926744D9D4177E867801EFB /* Pods_HotelIkitai.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HotelIkitai.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +75,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				147B67AB24AEFABF00DABFF0 /* MapKit.framework in Frameworks */,
+				147B67A924AEE4C800DABFF0 /* CoreLocation.framework in Frameworks */,
+				01EF90935C9E048F1ED64A2A /* Pods_HotelIkitai.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +89,8 @@
 			children = (
 				1405DD1924AC4A1100DAA3EC /* HotelIkitai */,
 				1405DD1824AC4A1100DAA3EC /* Products */,
+				61C5CEAA3EB3EACB6ABB541D /* Pods */,
+				7D3B3CF2336288508B807425 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +105,84 @@
 		1405DD1924AC4A1100DAA3EC /* HotelIkitai */ = {
 			isa = PBXGroup;
 			children = (
+				1499C66024ADD840003F8928 /* R.generated.swift */,
 				1405DD1A24AC4A1100DAA3EC /* AppDelegate.swift */,
-				1405DD1C24AC4A1100DAA3EC /* SceneDelegate.swift */,
-				1405DD1E24AC4A1100DAA3EC /* ViewController.swift */,
-				1405DD2024AC4A1100DAA3EC /* Main.storyboard */,
+				146ECAA924AD6FA000E84A13 /* Extension.swift */,
+				147B67A324AEDC8600DABFF0 /* Home */,
+				147B67A024AEDC1F00DABFF0 /* HotelList */,
+				1499C66624ADDC9C003F8928 /* wakamizu.jpg */,
 				1405DD2324AC4A1400DAA3EC /* Assets.xcassets */,
 				1405DD2524AC4A1400DAA3EC /* LaunchScreen.storyboard */,
 				1405DD2824AC4A1400DAA3EC /* Info.plist */,
+				14D9824B24AC4FA7007205F9 /* GoogleService-Info.plist */,
 			);
 			path = HotelIkitai;
+			sourceTree = "<group>";
+		};
+		147B67A024AEDC1F00DABFF0 /* HotelList */ = {
+			isa = PBXGroup;
+			children = (
+				146ECAA024AC930400E84A13 /* HotelList.storyboard */,
+				146ECA9A24AC881A00E84A13 /* HotelListViewController.swift */,
+				146ECA9C24AC883600E84A13 /* HotelListPresenter.swift */,
+				146ECA9E24AC884600E84A13 /* HotelListModel.swift */,
+				14B4E75F24B429E2003A0ACE /* HotelItem.swift */,
+				1499C66224ADDB7D003F8928 /* HotelListCollectionViewCell.swift */,
+				1499C66324ADDB7D003F8928 /* HotelListCollectionViewCell.xib */,
+				147B67A224AEDC6F00DABFF0 /* Detail */,
+				147B67A124AEDC4F00DABFF0 /* Search */,
+			);
+			path = HotelList;
+			sourceTree = "<group>";
+		};
+		147B67A124AEDC4F00DABFF0 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				146ECAAF24AD867900E84A13 /* SearchViewController.swift */,
+				146ECAB324AD94C700E84A13 /* Search.storyboard */,
+				146ECAAB24AD7F7800E84A13 /* EmptyView.swift */,
+				146ECAAD24AD7F8C00E84A13 /* EmptyView.xib */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		147B67A224AEDC6F00DABFF0 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				147B67A424AEE07E00DABFF0 /* HotelDetailViewController.swift */,
+				147B67A624AEE09100DABFF0 /* HotelDetail.storyboard */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		147B67A324AEDC8600DABFF0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				146ECA9824AC76F300E84A13 /* Home.storyboard */,
+				146ECA9224AC76C900E84A13 /* HomeController.swift */,
+				146ECA9424AC76D700E84A13 /* HomePresenter.swift */,
+				146ECA9624AC76E200E84A13 /* HomeModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		61C5CEAA3EB3EACB6ABB541D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				44D94F640947E809717D1A63 /* Pods-HotelIkitai.debug.xcconfig */,
+				60A6093737BCAB5798EE3A3E /* Pods-HotelIkitai.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7D3B3CF2336288508B807425 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				147B67AA24AEFABF00DABFF0 /* MapKit.framework */,
+				147B67A824AEE4C800DABFF0 /* CoreLocation.framework */,
+				E926744D9D4177E867801EFB /* Pods_HotelIkitai.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +192,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1405DD2B24AC4A1400DAA3EC /* Build configuration list for PBXNativeTarget "HotelIkitai" */;
 			buildPhases = (
+				BC7552144B31E80810A1C944 /* [CP] Check Pods Manifest.lock */,
+				146ECAA224AC93D100E84A13 /* ShellScript */,
 				1405DD1324AC4A1100DAA3EC /* Sources */,
 				1405DD1424AC4A1100DAA3EC /* Frameworks */,
 				1405DD1524AC4A1100DAA3EC /* Resources */,
+				FBF2274EB5FC975DA4682405 /* [CP] Embed Pods Frameworks */,
+				9B1BDA7A6A112DB0320AF972 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,35 +248,123 @@
 			buildActionMask = 2147483647;
 			files = (
 				1405DD2724AC4A1400DAA3EC /* LaunchScreen.storyboard in Resources */,
+				14D9824C24AC4FA7007205F9 /* GoogleService-Info.plist in Resources */,
 				1405DD2424AC4A1400DAA3EC /* Assets.xcassets in Resources */,
-				1405DD2224AC4A1100DAA3EC /* Main.storyboard in Resources */,
+				1499C66724ADDC9D003F8928 /* wakamizu.jpg in Resources */,
+				146ECAA124AC930400E84A13 /* HotelList.storyboard in Resources */,
+				146ECAB424AD94C700E84A13 /* Search.storyboard in Resources */,
+				146ECAAE24AD7F8C00E84A13 /* EmptyView.xib in Resources */,
+				146ECA9924AC76F300E84A13 /* Home.storyboard in Resources */,
+				147B67A724AEE09100DABFF0 /* HotelDetail.storyboard in Resources */,
+				1499C66524ADDB7D003F8928 /* HotelListCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		146ECAA224AC93D100E84A13 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+		9B1BDA7A6A112DB0320AF972 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HotelIkitai/Pods-HotelIkitai-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HotelIkitai/Pods-HotelIkitai-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HotelIkitai/Pods-HotelIkitai-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC7552144B31E80810A1C944 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HotelIkitai-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBF2274EB5FC975DA4682405 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HotelIkitai/Pods-HotelIkitai-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HotelIkitai/Pods-HotelIkitai-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HotelIkitai/Pods-HotelIkitai-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1405DD1324AC4A1100DAA3EC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1405DD1F24AC4A1100DAA3EC /* ViewController.swift in Sources */,
+				146ECA9724AC76E200E84A13 /* HomeModel.swift in Sources */,
+				146ECAB024AD867900E84A13 /* SearchViewController.swift in Sources */,
+				146ECA9B24AC881A00E84A13 /* HotelListViewController.swift in Sources */,
+				146ECA9524AC76D700E84A13 /* HomePresenter.swift in Sources */,
+				146ECA9324AC76C900E84A13 /* HomeController.swift in Sources */,
+				1499C66424ADDB7D003F8928 /* HotelListCollectionViewCell.swift in Sources */,
+				146ECAAA24AD6FA000E84A13 /* Extension.swift in Sources */,
+				146ECAAC24AD7F7800E84A13 /* EmptyView.swift in Sources */,
+				146ECA9F24AC884600E84A13 /* HotelListModel.swift in Sources */,
+				14B4E76024B429E2003A0ACE /* HotelItem.swift in Sources */,
 				1405DD1B24AC4A1100DAA3EC /* AppDelegate.swift in Sources */,
-				1405DD1D24AC4A1100DAA3EC /* SceneDelegate.swift in Sources */,
+				1499C66124ADD840003F8928 /* R.generated.swift in Sources */,
+				147B67A524AEE07E00DABFF0 /* HotelDetailViewController.swift in Sources */,
+				146ECA9D24AC883600E84A13 /* HotelListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1405DD2024AC4A1100DAA3EC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1405DD2124AC4A1100DAA3EC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1405DD2524AC4A1400DAA3EC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,6 +492,7 @@
 		};
 		1405DD2C24AC4A1400DAA3EC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44D94F640947E809717D1A63 /* Pods-HotelIkitai.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +511,7 @@
 		};
 		1405DD2D24AC4A1400DAA3EC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60A6093737BCAB5798EE3A3E /* Pods-HotelIkitai.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
