@@ -88,12 +88,30 @@ class HomeController: ButtonBarPagerTabStripViewController{
         present(searchVC, animated: true, completion: nil)
         
     }
+    func giveLocation(vc: HotelListViewController) {
+    
+        if nowLocation != nil {
+            vc.nowLocation = nowLocation
+        } else {
+            locationLoading(vc: vc)
+        }
+    }
+    
+    func locationLoading(vc: HotelListViewController) {
+        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 1.5) {
+            self.giveLocation(vc: vc)
+        }
+    }
     
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         let reasonableList = HotelListViewController.instantiate(forType: .reasonable)
         let nearList = HotelListViewController.instantiate(forType: .near)
-        return [reasonableList, nearList]
+        giveLocation(vc: nearList)
+        locationLoading(vc: nearList)
+        giveLocation(vc: reasonableList)
+        locationLoading(vc: reasonableList)
+        return [nearList, reasonableList]
     }
 
 }

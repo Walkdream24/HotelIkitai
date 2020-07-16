@@ -159,7 +159,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://h-herme.com/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1QZ-3L-t61">
                                                 <rect key="frame" x="45" y="656.5" width="123.5" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fqz-w9-QpY">
@@ -194,8 +194,8 @@
                                                 <rect key="frame" x="0.0" y="734" width="414" height="162"/>
                                             </mapView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XX2-rE-OUd">
-                                                <rect key="frame" x="0.0" y="120" width="414" height="138"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.40396227589641437" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="258"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥5300〜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TV7-DV-xTZ">
                                                 <rect key="frame" x="57" y="198" width="67" height="20"/>
@@ -268,7 +268,6 @@
                                             <constraint firstItem="3Eh-fo-jgW" firstAttribute="centerY" secondItem="edw-xp-2rH" secondAttribute="centerY" id="IZH-4g-bvf"/>
                                             <constraint firstItem="wbZ-3D-jgL" firstAttribute="centerY" secondItem="SKx-VD-Pry" secondAttribute="centerY" id="J5w-1e-mmr"/>
                                             <constraint firstItem="SKx-VD-Pry" firstAttribute="leading" secondItem="SWO-kS-pWG" secondAttribute="leading" constant="14" id="J7j-Vz-QRw"/>
-                                            <constraint firstItem="XX2-rE-OUd" firstAttribute="top" secondItem="SWO-kS-pWG" secondAttribute="top" constant="120" id="JTp-4l-H4g"/>
                                             <constraint firstItem="XX2-rE-OUd" firstAttribute="leading" secondItem="jHT-49-nTJ" secondAttribute="leading" id="JU2-G6-51d"/>
                                             <constraint firstItem="A8d-5X-anu" firstAttribute="leading" secondItem="SWO-kS-pWG" secondAttribute="leading" constant="14" id="JeP-Pf-0FF"/>
                                             <constraint firstItem="Hlq-Fg-c74" firstAttribute="leading" secondItem="SWO-kS-pWG" secondAttribute="leading" constant="14" id="Jn5-eH-cyz"/>
@@ -287,6 +286,7 @@
                                             <constraint firstItem="MWZ-3c-nL6" firstAttribute="leading" secondItem="SWO-kS-pWG" secondAttribute="leading" constant="14" id="VWN-qA-mjW"/>
                                             <constraint firstItem="xeg-no-GfS" firstAttribute="top" secondItem="jHT-49-nTJ" secondAttribute="bottom" constant="13" id="WCJ-YN-Y0q"/>
                                             <constraint firstItem="fqz-w9-QpY" firstAttribute="leading" secondItem="SWO-kS-pWG" secondAttribute="leading" constant="14" id="Wts-dA-Zf5"/>
+                                            <constraint firstItem="XX2-rE-OUd" firstAttribute="top" secondItem="SWO-kS-pWG" secondAttribute="top" id="Z7g-RK-Nxr"/>
                                             <constraint firstItem="FVx-sw-AZM" firstAttribute="leading" secondItem="ySI-b5-2UU" secondAttribute="trailing" constant="8" id="aRD-uc-oP5"/>
                                             <constraint firstItem="xeg-no-GfS" firstAttribute="top" secondItem="ySI-b5-2UU" secondAttribute="bottom" constant="24" id="aXO-iB-Eoe"/>
                                             <constraint firstItem="bmC-JO-cgu" firstAttribute="top" secondItem="Kte-I2-drc" secondAttribute="bottom" constant="11" id="amx-Wv-xTj"/>
@@ -347,7 +347,19 @@
                         <viewLayoutGuide key="safeArea" id="MzA-2q-nks"/>
                     </view>
                     <connections>
+                        <outlet property="accessLabel" destination="wbZ-3D-jgL" id="w3g-xU-RGN"/>
+                        <outlet property="addressLabel" destination="B5t-YB-97L" id="cn4-No-St1"/>
+                        <outlet property="callNumLabel" destination="3Eh-fo-jgW" id="VlU-aR-bUH"/>
+                        <outlet property="distanceLabel" destination="FVx-sw-AZM" id="m35-CH-Uo8"/>
+                        <outlet property="hotelImageView" destination="jHT-49-nTJ" id="4dR-qh-KmA"/>
+                        <outlet property="hotelNameLabel" destination="Kte-I2-drc" id="kdo-au-V3F"/>
+                        <outlet property="hotelUrlLabel" destination="1QZ-3L-t61" id="ZBt-pj-zZ9"/>
                         <outlet property="mapView" destination="mij-Hu-Mwi" id="hFY-0D-NvL"/>
+                        <outlet property="restMinLabel" destination="dei-7b-chv" id="jlQ-KN-Iuf"/>
+                        <outlet property="restPlanLabel" destination="WBm-xT-dIJ" id="ec1-xl-nNm"/>
+                        <outlet property="roomNumLabel" destination="xlK-2P-NGX" id="FkS-W9-QPo"/>
+                        <outlet property="stayMinLabel" destination="TV7-DV-xTZ" id="gye-mM-WV7"/>
+                        <outlet property="stayPlanLabel" destination="imO-pH-vZ2" id="ELz-tn-jiK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7S7-Of-Ugu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

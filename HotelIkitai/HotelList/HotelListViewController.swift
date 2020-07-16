@@ -14,16 +14,36 @@ import NVActivityIndicatorView
 protocol HotelListView: class {
     func presentActivityIndicator(message: String)
     func dismissActivityIndicator()
-    func toDetail()
+    func toDetail(hotel: HotelItem, restMin: Int, stayMin: Int)
     func reLoad()
+//    func location() -> CLLocation
 }
 class HotelListViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    var locationManager: CLLocationManager!
     var presenter: HotelListPresenter!
     var latitude: CLLocationDegrees?
     var longitude: CLLocationDegrees?
     var nowLocation: CLLocation?
+    var hotelImageUrl: String?
+    
+//    fileprivate func initializeLocationManager() {
+//        locationManager = CLLocationManager()
+//    }
+//    
+//    fileprivate func requestAuthorization() {
+//        locationManager.requestWhenInUseAuthorization()
+//    }
+//    
+//    fileprivate func setupLocationManagerIfNeeded() {
+//        let status = CLLocationManager.authorizationStatus()
+//        if status == .authorizedWhenInUse || status == .authorizedAlways {
+//            locationManager.delegate = self
+//            locationManager.distanceFilter = 10
+//            locationManager.startUpdatingLocation()
+//        }
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +56,28 @@ class HotelListViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(R.nib.hotelListCollectionViewCell)
+        fetchedLocation()
 
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter.viewWillAppear()
+        
+    }
+    
+    func fetchedLocation() {
+        presenter.goActivityIndicator()
+        if nowLocation != nil {
+           self.presenter.viewWillAppear(nowLocation: self.nowLocation!)
+        } else {
+            locationLoading()
+        }
+    }
+    
+    func locationLoading() {
+        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 2.0) {
+            self.fetchedLocation()
+        }
     }
     
     static func instantiate(forType type: Category) -> HotelListViewController {
@@ -66,16 +103,39 @@ extension HotelListViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.hotelListCollectionViewCell, for: indexPath)!
         cell.configure(with: presenter.hotelItem[indexPath.item])
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter.toDetail()
+        hotelImageUrl = presenter.hotelItem[indexPath.item].imageUrl
+        presenter.toDetail(hotel: presenter.hotelItem[indexPath.row], restMin: presenter.hotelItem[indexPath.item].restMin, stayMin: presenter.hotelItem[indexPath.item].stayMin)
     }
 
 }
 
 extension HotelListViewController: HotelListView, NVActivityIndicatorViewable {
+//    func location() -> CLLocation {
+//        if nowLocation != nil {
+//            return nowLocation!
+//        } else {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+//                return self.nowLocation
+//            }
+//        }
+//        return nowLocation!
+//    }
+    
+    
+    func toDetail(hotel: HotelItem, restMin: Int, stayMin: Int) {
+        let vc = HotelDetailViewController.instantiate(for: hotel)
+        vc.hotelImageUrl = hotelImageUrl
+        vc.restMin = restMin
+        vc.stayMin = stayMin
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
     func reLoad() {
         collectionView.reloadData()
     }
@@ -88,10 +148,19 @@ extension HotelListViewController: HotelListView, NVActivityIndicatorViewable {
         stopAnimating()
     }
     
-    func toDetail() {
-        let vc = R.storyboard.hotelDetail.hotelDetail()!
-         navigationController?.pushViewController(vc, animated: true)
-    }
-    
     
 }
+//extension HotelListViewController: CLLocationManagerDelegate {
+//    
+//    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+//        print(error.localizedDescription)
+//    }
+//    
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        let location = locations.first
+//         latitude = location?.coordinate.latitude
+//         longitude = location?.coordinate.longitude
+//        nowLocation = location
+//        print("nowwww\(nowLocation)")
+//    }
+//}

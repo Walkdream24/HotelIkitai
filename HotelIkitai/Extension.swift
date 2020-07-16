@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
 extension UIColor {
     convenience init(hex: String, alpha: CGFloat = 1.0) {
@@ -29,5 +30,15 @@ public extension UINavigationBar {
     func disableTransparency() {
         setBackgroundImage(nil, for: .default)
         shadowImage = nil
+    }
+}
+extension CLLocation {
+    // 同じ座標かどうかを返す
+    func isEqual(location: CLLocation?) -> Bool {
+        if let location = location {
+            return self.coordinate.latitude  == location.coordinate.latitude
+                && self.coordinate.longitude == location.coordinate.longitude
+        }
+        return false
     }
 }
