@@ -71,7 +71,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12室" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlK-2P-NGX">
-                                                <rect key="frame" x="45" y="342.5" width="31" height="16"/>
+                                                <rect key="frame" x="45" y="342.5" width="33" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -243,7 +243,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="FVx-sw-AZM" firstAttribute="centerX" secondItem="xlK-2P-NGX" secondAttribute="centerX" id="0PE-tQ-aWc"/>
+                                            <constraint firstItem="FVx-sw-AZM" firstAttribute="centerX" secondItem="xlK-2P-NGX" secondAttribute="centerX" constant="-1" id="0PE-tQ-aWc"/>
                                             <constraint firstItem="jJr-v9-9db" firstAttribute="leading" secondItem="SWO-kS-pWG" secondAttribute="leading" constant="14" id="0rY-C1-qSK"/>
                                             <constraint firstItem="bmC-JO-cgu" firstAttribute="baseline" secondItem="dei-7b-chv" secondAttribute="baseline" id="2CN-2F-mNi"/>
                                             <constraint firstItem="1Eg-Wa-qBA" firstAttribute="leading" secondItem="SWO-kS-pWG" secondAttribute="leading" constant="14" id="3jw-tb-7pe"/>

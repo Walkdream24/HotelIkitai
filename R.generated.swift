@@ -16,12 +16,10 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.file` struct is generated, and contains static references to 2 files.
+  /// This `R.file` struct is generated, and contains static references to 1 files.
   struct file {
     /// Resource file `GoogleService-Info.plist`.
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
-    /// Resource file `wakamizu.jpg`.
-    static let wakamizuJpg = Rswift.FileResource(bundle: R.hostingBundle, name: "wakamizu", pathExtension: "jpg")
     
     /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
     static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
@@ -29,16 +27,10 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
     
-    /// `bundle.url(forResource: "wakamizu", withExtension: "jpg")`
-    static func wakamizuJpg(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.wakamizuJpg
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-    
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 12 images.
+  /// This `R.image` struct is generated, and contains static references to 11 images.
   struct image {
     /// Image `bed`.
     static let bed = Rswift.ImageResource(bundle: R.hostingBundle, name: "bed")
@@ -62,8 +54,6 @@ struct R: Rswift.Validatable {
     static let stay = Rswift.ImageResource(bundle: R.hostingBundle, name: "stay")
     /// Image `train`.
     static let train = Rswift.ImageResource(bundle: R.hostingBundle, name: "train")
-    /// Image `wakamizu.jpg`.
-    static let wakamizuJpg = Rswift.ImageResource(bundle: R.hostingBundle, name: "wakamizu.jpg")
     
     /// `UIImage(named: "bed", bundle: ..., traitCollection: ...)`
     static func bed(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
@@ -118,11 +108,6 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "train", bundle: ..., traitCollection: ...)`
     static func train(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.train, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "wakamizu.jpg", bundle: ..., traitCollection: ...)`
-    static func wakamizuJpg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.wakamizuJpg, compatibleWith: traitCollection)
     }
     
     fileprivate init() {}

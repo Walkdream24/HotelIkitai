@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import NVActivityIndicatorView
 import Nuke
+import GoogleMobileAds
 
 protocol HotelDetailView: class {
     func setUpDetailInfo()
@@ -17,7 +18,7 @@ protocol HotelDetailView: class {
     func dismissActivityIndicator()
 }
 
-class HotelDetailViewController: UIViewController {
+class HotelDetailViewController: UIViewController, GADBannerViewDelegate {
 
     @IBOutlet weak var hotelImageView: UIImageView!
     @IBOutlet weak var hotelNameLabel: UILabel!
@@ -39,6 +40,7 @@ class HotelDetailViewController: UIViewController {
     var restMin: Int = 0
     var stayMin: Int = 0
     var gradientLayer: CAGradientLayer!
+    var bannerView: GADBannerView!
     
     static func instantiate(for hotel: HotelItem) -> HotelDetailViewController {
         let vc = R.storyboard.hotelDetail.hotelDetail()!
@@ -64,7 +66,40 @@ class HotelDetailViewController: UIViewController {
         myPin.subtitle = "203号"
         myPin.coordinate = location
         mapView.addAnnotation(myPin)
+        admobTest()
     }
+    
+    func admobTest() {
+        bannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        addBannerViewToView(bannerView)
+        bannerView.adUnitID = "ca-app-pub-3343885117344222/5948871302"
+        bannerView.rootViewController = self
+        let request = GADRequest()
+        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = ["c1b7d6a29562e5694007f76016521714"]
+        bannerView.load(request)
+        bannerView.delegate = self
+    }
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+            bannerView.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(bannerView)
+            view.addConstraints(
+                [NSLayoutConstraint(item: bannerView,
+                                    attribute: .bottom,
+                                    relatedBy: .equal,
+                                    toItem: bottomLayoutGuide,
+                                    attribute: .top,
+                                    multiplier: 1,
+                                    constant: 0),
+                 NSLayoutConstraint(item: bannerView,
+                                    attribute: .centerX,
+                                    relatedBy: .equal,
+                                    toItem: view,
+                                    attribute: .centerX,
+                                    multiplier: 1,
+                                    constant: 0)
+                ])
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -119,3 +154,4 @@ extension HotelDetailViewController: HotelDetailView, NVActivityIndicatorViewabl
         callNumLabel.text = "\(presenter.item[0].callNumber)"
     }
 }
+
