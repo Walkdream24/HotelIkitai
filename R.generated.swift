@@ -299,7 +299,6 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "rest", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'rest' is used in storyboard 'HotelDetail', but couldn't be loaded.") }
         if UIKit.UIImage(named: "stay", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'stay' is used in storyboard 'HotelDetail', but couldn't be loaded.") }
         if UIKit.UIImage(named: "train", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'train' is used in storyboard 'HotelDetail', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "wakamizu.jpg", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'wakamizu.jpg' is used in storyboard 'HotelDetail', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
         if _R.storyboard.hotelDetail().hotelDetail() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'hotelDetail' could not be loaded from storyboard 'HotelDetail' as 'HotelDetailViewController'.") }

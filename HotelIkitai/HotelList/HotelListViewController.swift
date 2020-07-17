@@ -14,7 +14,7 @@ import NVActivityIndicatorView
 protocol HotelListView: class {
     func presentActivityIndicator(message: String)
     func dismissActivityIndicator()
-    func toDetail(hotel: HotelItem, restMin: Int, stayMin: Int)
+    func toDetail(hotel: HotelItem, restMin: Int, stayMin: Int, latitude: Double, longitude: Double, distance: Double)
     func reLoad()
 //    func location() -> CLLocation
 }
@@ -75,7 +75,7 @@ class HotelListViewController: UIViewController {
     }
     
     func locationLoading() {
-        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 2.0) {
+        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 1.0) {
             self.fetchedLocation()
         }
     }
@@ -109,12 +109,13 @@ extension HotelListViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         hotelImageUrl = presenter.hotelItem[indexPath.item].imageUrl
-        presenter.toDetail(hotel: presenter.hotelItem[indexPath.row], restMin: presenter.hotelItem[indexPath.item].restMin, stayMin: presenter.hotelItem[indexPath.item].stayMin)
+        presenter.toDetail(hotel: presenter.hotelItem[indexPath.row], restMin: presenter.hotelItem[indexPath.row].restMin, stayMin: presenter.hotelItem[indexPath.row].stayMin, latitude: presenter.hotelItem[indexPath.row].latitude, longitude: presenter.hotelItem[indexPath.row].longitude, distance: presenter.hotelItem[indexPath.row].distance)
     }
 
 }
 
 extension HotelListViewController: HotelListView, NVActivityIndicatorViewable {
+
 //    func location() -> CLLocation {
 //        if nowLocation != nil {
 //            return nowLocation!
@@ -127,11 +128,15 @@ extension HotelListViewController: HotelListView, NVActivityIndicatorViewable {
 //    }
     
     
-    func toDetail(hotel: HotelItem, restMin: Int, stayMin: Int) {
+    func toDetail(hotel: HotelItem, restMin: Int, stayMin: Int, latitude: Double, longitude: Double, distance: Double) {
         let vc = HotelDetailViewController.instantiate(for: hotel)
         vc.hotelImageUrl = hotelImageUrl
         vc.restMin = restMin
         vc.stayMin = stayMin
+        vc.latitude = latitude
+        vc.longitude = longitude
+        vc.distance = distance
+        vc.navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
         navigationController?.pushViewController(vc, animated: true)
     }
     

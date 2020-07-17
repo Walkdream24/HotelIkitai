@@ -22,6 +22,16 @@ class HotelDetailPresenter {
         self.model.delegate = self
         model.fetchHotelDetail(with: hotel.docId)
     }
+    
+    func toMapApp(latitude: Double, longitude: Double, googleMap: Bool) {
+        model.toMapApp(latitude: latitude, longitude: longitude,googleMap: googleMap)
+    }
+    func toHotelWebSite() {
+        view.toHotelWebSite()
+    }
+    func toCall() {
+        view.callAction()
+    }
 }
 extension HotelDetailPresenter: HotelDetailModelDelegate {
     func didFetchHotelDetail(with error: Error?) {

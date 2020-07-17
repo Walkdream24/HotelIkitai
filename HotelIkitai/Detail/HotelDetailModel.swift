@@ -26,5 +26,20 @@ class HotelDetailModel {
             self.delegate?.didFetchHotelDetail(with: error)
         }
     }
+    func toMapApp(latitude: Double, longitude: Double, googleMap: Bool) {
+        let urlString: String!
+        if googleMap {
+            if UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!) {
+                urlString = "comgooglemaps://?daddr=\(latitude),\(longitude)&directionsmode=walking&zoom=14"
+            } else {
+                urlString = "http://maps.apple.com/?daddr=\(latitude),\(longitude)&dirflg=w"
+            }
+        } else {
+            urlString = "http://maps.apple.com/?daddr=\(latitude),\(longitude)&dirflg=w"
+        }
+        if let url = URL(string: urlString) {
+            UIApplication.shared.open(url)
+        }
+    }
     
 }

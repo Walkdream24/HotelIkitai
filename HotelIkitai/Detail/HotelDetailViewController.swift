@@ -11,11 +11,14 @@ import MapKit
 import NVActivityIndicatorView
 import Nuke
 import GoogleMobileAds
+import WebKit
 
 protocol HotelDetailView: class {
     func setUpDetailInfo()
     func presentActivityIndicator(message: String)
     func dismissActivityIndicator()
+    func toHotelWebSite()
+    func callAction()
 }
 
 class HotelDetailViewController: UIViewController, GADBannerViewDelegate {
@@ -33,14 +36,19 @@ class HotelDetailViewController: UIViewController, GADBannerViewDelegate {
     @IBOutlet weak var hotelUrlLabel: UILabel!
     @IBOutlet weak var callNumLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
-//    var latitude: CLLocationDegrees?
-//    var longitude: CLLocationDegrees?
+    @IBOutlet weak var mediumBannerView: UIView!
+    @IBOutlet weak var toMapAppButton: UIButton!
+    var alertController: UIAlertController!
+    var latitude: CLLocationDegrees?
+    var longitude: CLLocationDegrees?
     var presenter: HotelDetailPresenter!
     var hotelImageUrl: String?
     var restMin: Int = 0
     var stayMin: Int = 0
+    var distance: Double = 0
     var gradientLayer: CAGradientLayer!
     var bannerView: GADBannerView!
+    let myPin: MKPointAnnotation = MKPointAnnotation()
     
     static func instantiate(for hotel: HotelItem) -> HotelDetailViewController {
         let vc = R.storyboard.hotelDetail.hotelDetail()!
@@ -51,9 +59,8 @@ class HotelDetailViewController: UIViewController, GADBannerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         gradientLayer = CAGradientLayer()
-        let latitude = 35.71427693160305
-        let longitude = 139.57190515164064
-        let location = CLLocationCoordinate2DMake(latitude, longitude)
+        toMapAppButton.layer.cornerRadius = 4
+        let location = CLLocationCoordinate2DMake(latitude!, longitude!)
         mapView.setCenter(location, animated:true)
         var region = mapView.region
         region.center = location
@@ -61,12 +68,10 @@ class HotelDetailViewController: UIViewController, GADBannerViewDelegate {
         region.span.longitudeDelta = 0.02
         // マップビューに縮尺を設定
         mapView.setRegion(region, animated:true)
-        var myPin: MKPointAnnotation = MKPointAnnotation()
-        myPin.title = "山桜ヒルズ"
-        myPin.subtitle = "203号"
         myPin.coordinate = location
         mapView.addAnnotation(myPin)
         admobTest()
+        admobTest2()
     }
     
     func admobTest() {
@@ -79,6 +84,18 @@ class HotelDetailViewController: UIViewController, GADBannerViewDelegate {
         bannerView.load(request)
         bannerView.delegate = self
     }
+    
+    func admobTest2() {
+        bannerView = GADBannerView(adSize: kGADAdSizeMediumRectangle)
+        mediumBannerView.addSubview(bannerView)
+        bannerView.adUnitID = "ca-app-pub-3343885117344222/5948871302"
+        bannerView.rootViewController = self
+        let request = GADRequest()
+        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = ["c1b7d6a29562e5694007f76016521714"]
+        bannerView.load(request)
+        bannerView.delegate = self
+     }
+    
     func addBannerViewToView(_ bannerView: GADBannerView) {
             bannerView.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(bannerView)
@@ -104,8 +121,8 @@ class HotelDetailViewController: UIViewController, GADBannerViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)
-        navigationController?.navigationBar.tintColor = UIColor.white
-        navigationController?.navigationBar.enableTransparency()
+        navigationController?.navigationBar.tintColor = UIColor.black
+//        navigationController?.navigationBar.enableTransparency()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -127,9 +144,57 @@ class HotelDetailViewController: UIViewController, GADBannerViewDelegate {
         gradientLayer.endPoint = CGPoint.init(x: 0.5, y: 1 )
         hotelImageView.layer.insertSublayer(gradientLayer,at:0)
     }
+//     func callAlert(title:String, message:String,completion: @escaping () -> Void) {
+    func mapAlert(title:String, message:String) {
+        alertController = UIAlertController(title: title,message: message,preferredStyle: UIAlertController.Style.actionSheet)
+        let defaultAction: UIAlertAction = UIAlertAction(title: "Google Maps", style: UIAlertAction.Style.default, handler:{
+            (action: UIAlertAction!) -> Void in
+            self.presenter.toMapApp(latitude: self.latitude!, longitude: self.longitude!, googleMap: true)
+        })
+        let defaultAction2: UIAlertAction = UIAlertAction(title: "マップ", style: UIAlertAction.Style.default, handler:{
+                  (action: UIAlertAction!) -> Void in
+            self.presenter.toMapApp(latitude: self.latitude!, longitude: self.longitude!, googleMap: false)
+        })
+        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler:{
+            (action: UIAlertAction!) -> Void in
+            print("cancelAction")
+        })
+
+        alertController.addAction(defaultAction)
+        alertController.addAction(defaultAction2)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true)
+    }
+    
+    @IBAction func toMapAppButtonTapped(_ sender: Any) {
+        mapAlert(title: "", message: "どの地図アプリで開きますか？")
+    }
+    @IBAction func hotelLinkTapped(_ sender: UIButton) {
+        presenter.toHotelWebSite()
+    }
+    @IBAction func callButtonTapped(_ sender: UIButton) {
+        presenter.toCall()
+    }
+    
 
 }
 extension HotelDetailViewController: HotelDetailView, NVActivityIndicatorViewable {
+    func callAction() {
+            let callString = self.presenter.item[0].callNumber.replacingOccurrences(of:"-", with:"")
+            print("aaaaa\(callString)")
+            let url = NSURL(string: "tel://\(callString)")!
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url as URL)
+            } else {
+                UIApplication.shared.openURL(url as URL)
+            }
+    }
+    
+    func toHotelWebSite() {
+        let vc = StaticWebViewController(url: URL(string: "\(presenter.item[0].hotelUrl)")!)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func presentActivityIndicator(message: String) {
         startAnimating(message: message)
     }
@@ -145,6 +210,8 @@ extension HotelDetailViewController: HotelDetailView, NVActivityIndicatorViewabl
         hotelNameLabel.text = presenter.item[0].name
         restMinLabel.text = "¥\(restMin)"
         stayMinLabel.text = "¥\(stayMin)"
+        let getDistance = "\(distance)".prefix(3)
+        distanceLabel.text = "現在地から\(getDistance)km"
         addressLabel.text = presenter.item[0].address
         accessLabel.text = presenter.item[0].access
         roomNumLabel.text = "\(presenter.item[0].roomNum)室"
@@ -152,6 +219,8 @@ extension HotelDetailViewController: HotelDetailView, NVActivityIndicatorViewabl
         stayPlanLabel.text = presenter.item[0].stayPlan
         hotelUrlLabel.text = presenter.item[0].hotelUrl
         callNumLabel.text = "\(presenter.item[0].callNumber)"
+        myPin.title = presenter.item[0].name
+        self.navigationItem.title = presenter.item[0].name
     }
 }
 

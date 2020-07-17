@@ -23,8 +23,8 @@ class HotelListPresenter {
         model.delegate = self
     }
     
-    func toDetail(hotel: HotelItem, restMin: Int, stayMin: Int) {
-        view?.toDetail(hotel: hotel, restMin: restMin, stayMin: stayMin)
+    func toDetail(hotel: HotelItem, restMin: Int, stayMin: Int, latitude: Double, longitude: Double, distance: Double) {
+        view?.toDetail(hotel: hotel, restMin: restMin, stayMin: stayMin, latitude: latitude, longitude: longitude, distance: distance)
         
     }
     func viewDidLoad() {

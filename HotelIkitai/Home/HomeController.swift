@@ -72,6 +72,7 @@ class HomeController: ButtonBarPagerTabStripViewController{
         initializeLocationManager()
         requestAuthorization()
         setupLocationManagerIfNeeded()
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
      
     }
     override func viewWillAppear(_ animated: Bool) {
