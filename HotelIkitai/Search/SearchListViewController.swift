@@ -1,35 +1,47 @@
 //
-//  HotelListViewController.swift
+//  SearchListViewController.swift
 //  HotelIkitai
 //
-//  Created by 中重歩夢 on 2020/07/01.
+//  Created by 中重歩夢 on 2020/07/17.
 //  Copyright © 2020 Ayumu Nakashige. All rights reserved.
 //
 
 import UIKit
 import XLPagerTabStrip
-import CoreLocation
 import NVActivityIndicatorView
+import CoreLocation
+import SPAlert
 
-protocol HotelListView: class {
+protocol SearchListView: class {
     func presentActivityIndicator(message: String)
     func dismissActivityIndicator()
-    func toDetail(hotel: HotelItem, restMin: Int, stayMin: Int, latitude: Double, longitude: Double, distance: Double)
     func reLoad()
-//    func location() -> CLLocation
+    func toDetail(hotel: HotelItem, restMin: Int, stayMin: Int, latitude: Double, longitude: Double, distance: Double)
+    func showCompleteMessage()
+    func resultNothing()
 }
-class HotelListViewController: UIViewController {
-    
+
+protocol SearchListInterface: class {
+    func searchStart(searchWord: String, nowLocation:CLLocation)
+}
+
+class SearchListViewController: UIViewController {
+
     @IBOutlet weak var collectionView: UICollectionView!
-    var presenter: HotelListPresenter!
-    var latitude: CLLocationDegrees?
-    var longitude: CLLocationDegrees?
+    var presenter: SearchListPresenter!
+    var emptyView: EmptyView!
+    var nothingView: NothingResultsView!
+    var searchWord = ""
+//    var latitude: CLLocationDegrees?
+//    var longitude: CLLocationDegrees?
     var nowLocation: CLLocation?
     var hotelImageUrl: String?
-    
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        emptyView = EmptyView.instantiate()
+        collectionView.backgroundView = emptyView
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width:self.view.frame.width - 40, height:(self.view.frame.width - 40) * 0.95)
         layout.minimumLineSpacing = 30
@@ -38,46 +50,28 @@ class HotelListViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(R.nib.hotelListCollectionViewCell)
-        fetchedLocation()
-
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+        super.viewWillAppear(true)
+        print("eeeeeeee\(presenter.categoryType)")
     }
     
-    func fetchedLocation() {
-        presenter.goActivityIndicator()
-        if nowLocation != nil {
-           self.presenter.viewWillAppear(nowLocation: self.nowLocation!)
-        } else {
-            locationLoading()
-        }
-    }
-    
-    func locationLoading() {
-        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 1.0) {
-            self.fetchedLocation()
-        }
-    }
-    
-    static func instantiate(forType type: Category) -> HotelListViewController {
-        let vc = R.storyboard.hotelList.hotelList()!
-        vc.presenter = HotelListPresenter(view: vc, type: type)
+    static func instantiate(forType type: Category) -> SearchListViewController {
+        let vc = R.storyboard.searchList.searchList()!
+        vc.presenter = SearchListPresenter(view: vc, type: type)
+        vc.nothingView = NothingResultsView.instantiate(presenter: vc.presenter)
         return vc
     }
 
 }
-
-extension HotelListViewController: IndicatorInfoProvider {
+extension SearchListViewController: IndicatorInfoProvider {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: presenter?.categoryType.displayName)
     }
-    
 }
-
-extension HotelListViewController: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+extension SearchListViewController: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter.hotelItem.count
     }
@@ -93,10 +87,24 @@ extension HotelListViewController: UICollectionViewDelegate, UICollectionViewDat
         hotelImageUrl = presenter.hotelItem[indexPath.item].imageUrl
         presenter.toDetail(hotel: presenter.hotelItem[indexPath.row], restMin: presenter.hotelItem[indexPath.row].restMin, stayMin: presenter.hotelItem[indexPath.row].stayMin, latitude: presenter.hotelItem[indexPath.row].latitude, longitude: presenter.hotelItem[indexPath.row].longitude, distance: presenter.hotelItem[indexPath.row].distance)
     }
-
 }
-
-extension HotelListViewController: HotelListView, NVActivityIndicatorViewable {
+    
+extension SearchListViewController: SearchListView, NVActivityIndicatorViewable {
+    
+    func resultNothing() {
+        if collectionView != nil {
+            nothingView.searchText = searchWord
+            nothingView.setSearchText()
+            self.collectionView.backgroundView = nothingView
+        } else {
+            print("nilです")
+        }
+    }
+    
+    func showCompleteMessage() {
+        SPAlert.present(title: "送信しました", preset: .done)
+        collectionView.backgroundView = nil
+    }
     
     func toDetail(hotel: HotelItem, restMin: Int, stayMin: Int, latitude: Double, longitude: Double, distance: Double) {
         let vc = HotelDetailViewController.instantiate(for: hotel)
@@ -109,9 +117,13 @@ extension HotelListViewController: HotelListView, NVActivityIndicatorViewable {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    
     func reLoad() {
-        collectionView.reloadData()
+        if collectionView != nil {
+            collectionView.backgroundView = nil
+            self.collectionView.reloadData()
+        } else {
+            print("nilです")
+        }
     }
     
     func presentActivityIndicator(message: String) {
@@ -122,6 +134,13 @@ extension HotelListViewController: HotelListView, NVActivityIndicatorViewable {
         stopAnimating()
     }
     
+}
+extension SearchListViewController: SearchViewInterface {
+    func searchStart(searchWord: String, nowLocation: CLLocation) {
+        presenter.searchStart(searchWord: searchWord, nowLocation: nowLocation)
+        self.searchWord = searchWord
+    }
     
 }
+
 

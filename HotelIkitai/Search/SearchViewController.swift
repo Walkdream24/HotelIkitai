@@ -7,22 +7,47 @@
 //
 
 import UIKit
+import XLPagerTabStrip
+import CoreLocation
 
-class SearchViewController: UIViewController {
+protocol SearchViewInterface: class {
+    func searchStart(searchWord: String, nowLocation: CLLocation)
+}
+
+class SearchViewController: ButtonBarPagerTabStripViewController {
 
     @IBOutlet weak var searchFrameView: UIView!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var cancelButton: UIButton!
-    @IBOutlet weak var collectionView: UICollectionView!
-    var emptyView: EmptyView!
+    var nowLocation: CLLocation?
+    var delegates = RMWeakSet<SearchViewInterface>()
+
     
     override func viewDidLoad() {
+        settings.style.buttonBarBackgroundColor = .clear
+        settings.style.buttonBarItemBackgroundColor = .clear
+        settings.style.selectedBarBackgroundColor = .clear
+        settings.style.buttonBarLeftContentInset = 20
+        settings.style.buttonBarMinimumLineSpacing = 11
+        settings.style.buttonBarRightContentInset = 150
+        settings.style.buttonBarItemFont = .boldSystemFont(ofSize: 16)
+        changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
+            guard changeCurrentIndex else { return }
+            oldCell?.backgroundColor = UIColor(hex: "F5F5F5")
+            oldCell?.layer.cornerRadius = (oldCell?.frame.height)! / 2
+            newCell?.backgroundColor = UIColor.black
+            newCell?.layer.cornerRadius = (newCell?.frame.height)! / 2
+            oldCell?.label.textColor = .black
+            oldCell?.label.font = .boldSystemFont(ofSize: 15)
+            newCell?.label.textColor = .white
+            newCell?.label.font = .boldSystemFont(ofSize: 15)
+        }
+            
         super.viewDidLoad()
         searchFrameView.layer.cornerRadius = 5
         searchTextField.becomeFirstResponder()
         searchTextField.delegate = self
-        emptyView = EmptyView.instantiate()
-        self.collectionView.backgroundView = emptyView
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 
     }
     
@@ -35,6 +60,13 @@ class SearchViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
+        let reasonableList = SearchListViewController.instantiate(forType: .reasonable)
+        let nearList = SearchListViewController.instantiate(forType: .near)
+        delegates = RMWeakSet([reasonableList,nearList])
+           return [nearList, reasonableList]
+    }
+    
 
 
 }
@@ -42,10 +74,9 @@ extension SearchViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchTextField.resignFirstResponder()
         
-        self.collectionView.backgroundView = nil
-//        if !(searchTextField.text!.isEmpty) {
-//
-//        }
+        if !(searchTextField.text!.isEmpty) {
+            self.delegates.forEach{$0.searchStart(searchWord: searchTextField.text!, nowLocation: nowLocation!)}
+        }
         return true
     }
     

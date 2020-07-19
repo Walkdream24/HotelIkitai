@@ -113,12 +113,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
     /// Nib `EmptyView`.
     static let emptyView = _R.nib._EmptyView()
     /// Nib `HotelListCollectionViewCell`.
     static let hotelListCollectionViewCell = _R.nib._HotelListCollectionViewCell()
+    /// Nib `NothingResultsView`.
+    static let nothingResultsView = _R.nib._NothingResultsView()
     
     /// `UINib(name: "EmptyView", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.emptyView) instead")
@@ -132,12 +134,22 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.hotelListCollectionViewCell)
     }
     
+    /// `UINib(name: "NothingResultsView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.nothingResultsView) instead")
+    static func nothingResultsView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.nothingResultsView)
+    }
+    
     static func emptyView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> EmptyView? {
       return R.nib.emptyView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EmptyView
     }
     
     static func hotelListCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> HotelListCollectionViewCell? {
       return R.nib.hotelListCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? HotelListCollectionViewCell
+    }
+    
+    static func nothingResultsView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> NothingResultsView? {
+      return R.nib.nothingResultsView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NothingResultsView
     }
     
     fileprivate init() {}
@@ -151,7 +163,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 6 storyboards.
   struct storyboard {
     /// Storyboard `Home`.
     static let home = _R.storyboard.home()
@@ -161,6 +173,8 @@ struct R: Rswift.Validatable {
     static let hotelList = _R.storyboard.hotelList()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `SearchList`.
+    static let searchList = _R.storyboard.searchList()
     /// Storyboard `Search`.
     static let search = _R.storyboard.search()
     
@@ -187,6 +201,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Search", bundle: ...)`
     static func search(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.search)
+    }
+    
+    /// `UIStoryboard(name: "SearchList", bundle: ...)`
+    static func searchList(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.searchList)
     }
     
     fileprivate init() {}
@@ -248,6 +267,17 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
+    struct _NothingResultsView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "NothingResultsView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> NothingResultsView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NothingResultsView
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   
@@ -258,6 +288,7 @@ struct _R: Rswift.Validatable {
       try hotelList.validate()
       try launchScreen.validate()
       try search.validate()
+      try searchList.validate()
     }
     
     struct home: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
@@ -353,6 +384,24 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, *) {
         }
         if _R.storyboard.search().search() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'search' could not be loaded from storyboard 'Search' as 'SearchViewController'.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct searchList: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "SearchList"
+      let searchList = StoryboardViewControllerResource<SearchListViewController>(identifier: "SearchList")
+      
+      func searchList(_: Void = ()) -> SearchListViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: searchList)
+      }
+      
+      static func validate() throws {
+        if #available(iOS 11.0, *) {
+        }
+        if _R.storyboard.searchList().searchList() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'searchList' could not be loaded from storyboard 'SearchList' as 'SearchListViewController'.") }
       }
       
       fileprivate init() {}

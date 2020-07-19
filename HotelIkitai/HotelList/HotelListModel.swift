@@ -38,15 +38,6 @@ class HotelListModel {
         categoryType = type
     }
 
-    func fetchLocation(placeName: String) {
-        CLGeocoder().geocodeAddressString(placeName, completionHandler: { (placemarks, error) in
-            if let firstPlacemark = placemarks?.first, let location = firstPlacemark.location {
-                self.delegate?.hotelLocation(location: location, with: error)
-            } else {
-                print("nothing")
-            }
-        })
-    }
     
     func fetchDistance(nowLocation:CLLocation, destination: CLLocation) {
         let distance = destination.distance(from: nowLocation)
@@ -64,6 +55,7 @@ class HotelListModel {
 //            query = colRef.order(by:"stayMin", descending: false)
 //        }
         query = colRef.order(by:"stayMin", descending: false)
+        .whereField("stayMin", isLessThan: 900000)
         query.getDocuments { [weak self] (snapshot, error) in
              guard let `self` = self else { return }
              if let snapshot = snapshot {

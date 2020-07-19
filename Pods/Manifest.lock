@@ -209,6 +209,7 @@ PODS:
   - R.swift (5.0.3):
     - R.swift.Library (~> 5.0.0)
   - R.swift.Library (5.0.1)
+  - SPAlert (1.1.1)
   - XLPagerTabStrip (9.0.0)
 
 DEPENDENCIES:
@@ -230,6 +231,7 @@ DEPENDENCIES:
   - Nuke
   - NVActivityIndicatorView
   - R.swift
+  - SPAlert
   - XLPagerTabStrip
 
 SPEC REPOS:
@@ -273,6 +275,7 @@ SPEC REPOS:
     - Protobuf
     - R.swift
     - R.swift.Library
+    - SPAlert
     - XLPagerTabStrip
 
 SPEC CHECKSUMS:
@@ -315,8 +318,9 @@ SPEC CHECKSUMS:
   Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
   R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
   R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
+  SPAlert: 292690a27df49ff131d532a0a39d89b08dd93e4d
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: d82612f17c2c5431cfbecfb588e6ae194712d84a
+PODFILE CHECKSUM: 3b198cc5eabcfeb214da15f44162fbbaf5f47a0e
 
 COCOAPODS: 1.9.3

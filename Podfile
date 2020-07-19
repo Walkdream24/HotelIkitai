@@ -26,5 +26,6 @@ target 'HotelIkitai' do
   pod 'FSPagerView'
   pod 'NVActivityIndicatorView'
   pod 'Google-Mobile-Ads-SDK'
+  pod 'SPAlert'
 
 end

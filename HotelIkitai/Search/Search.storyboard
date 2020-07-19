@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -57,44 +56,46 @@
                                     <action selector="cancelButtonTapped:" destination="hyr-Re-YbP" eventType="touchUpInside" id="dM8-rs-J8Y"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OhR-xO-2ED">
-                                <rect key="frame" x="0.0" y="122" width="414" height="740"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pvN-jV-adf">
-                                    <size key="itemSize" width="128" height="128"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FJK-YL-kTo" customClass="ButtonBarView" customModule="XLPagerTabStrip">
+                                <rect key="frame" x="0.0" y="108" width="414" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="EWj-fn-AeX"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FAl-ab-xhC">
+                                    <size key="itemSize" width="65" height="58"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="5O9-Kw-4oV">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hqC-jm-JwY">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyq-TR-wmd">
+                                <rect key="frame" x="0.0" y="164" width="414" height="732"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="OhR-xO-2ED" firstAttribute="leading" secondItem="X5z-0g-AGZ" secondAttribute="leading" id="3Tz-C7-AWJ"/>
-                            <constraint firstItem="OhR-xO-2ED" firstAttribute="bottom" secondItem="X5z-0g-AGZ" secondAttribute="bottom" id="H2v-Pt-ikb"/>
+                            <constraint firstItem="fyq-TR-wmd" firstAttribute="trailing" secondItem="X5z-0g-AGZ" secondAttribute="trailing" id="4ts-8F-BLa"/>
+                            <constraint firstItem="FJK-YL-kTo" firstAttribute="trailing" secondItem="X5z-0g-AGZ" secondAttribute="trailing" id="64M-gC-SdW"/>
+                            <constraint firstItem="FJK-YL-kTo" firstAttribute="leading" secondItem="X5z-0g-AGZ" secondAttribute="leading" id="8BQ-Jp-Pgt"/>
+                            <constraint firstItem="fyq-TR-wmd" firstAttribute="top" secondItem="FJK-YL-kTo" secondAttribute="bottom" constant="16" id="D0x-41-Vyp"/>
+                            <constraint firstItem="FJK-YL-kTo" firstAttribute="top" secondItem="3bo-Ev-sOj" secondAttribute="bottom" constant="16" id="Dfh-c5-Ln1"/>
                             <constraint firstItem="yOp-U3-e5W" firstAttribute="top" secondItem="X5z-0g-AGZ" secondAttribute="top" constant="8" id="JpV-T0-feh"/>
-                            <constraint firstItem="OhR-xO-2ED" firstAttribute="trailing" secondItem="X5z-0g-AGZ" secondAttribute="trailing" id="KvJ-Nm-5tS"/>
                             <constraint firstItem="X5z-0g-AGZ" firstAttribute="trailing" secondItem="yOp-U3-e5W" secondAttribute="trailing" constant="20" id="ew2-ok-K1c"/>
                             <constraint firstItem="3bo-Ev-sOj" firstAttribute="leading" secondItem="X5z-0g-AGZ" secondAttribute="leading" constant="20" id="krn-xY-u50"/>
+                            <constraint firstItem="fyq-TR-wmd" firstAttribute="leading" secondItem="X5z-0g-AGZ" secondAttribute="leading" id="naw-qx-Cjt"/>
                             <constraint firstItem="yOp-U3-e5W" firstAttribute="leading" secondItem="3bo-Ev-sOj" secondAttribute="trailing" constant="8" id="sqX-jW-zv1"/>
-                            <constraint firstItem="OhR-xO-2ED" firstAttribute="top" secondItem="3bo-Ev-sOj" secondAttribute="bottom" constant="30" id="tr1-Cu-rpA"/>
+                            <constraint firstAttribute="bottom" secondItem="fyq-TR-wmd" secondAttribute="bottom" id="uVL-p7-Ai9"/>
                             <constraint firstItem="3bo-Ev-sOj" firstAttribute="top" secondItem="X5z-0g-AGZ" secondAttribute="top" constant="4" id="xG0-Nm-XNe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X5z-0g-AGZ"/>
                     </view>
                     <connections>
+                        <outlet property="buttonBarView" destination="FJK-YL-kTo" id="rp0-l0-Mc3"/>
                         <outlet property="cancelButton" destination="yOp-U3-e5W" id="ieg-IF-euT"/>
-                        <outlet property="collectionView" destination="OhR-xO-2ED" id="rUX-tl-PCw"/>
+                        <outlet property="containerView" destination="fyq-TR-wmd" id="4Jb-kr-jlK"/>
                         <outlet property="searchFrameView" destination="3bo-Ev-sOj" id="UrO-GG-TyA"/>
                         <outlet property="searchTextField" destination="Egy-oa-aQI" id="j3L-qv-CBv"/>
                     </connections>

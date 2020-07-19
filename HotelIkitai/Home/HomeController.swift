@@ -14,6 +14,7 @@ import CoreLocation
 protocol HomeView: class {
     func updateLocation(placeName: String)
     func locationBool()
+    func toSearch()
     
 }
 class HomeController: ButtonBarPagerTabStripViewController{
@@ -81,13 +82,7 @@ class HomeController: ButtonBarPagerTabStripViewController{
     }
 
     @IBAction func searchButtonTapped(_ sender: Any) {
-        //のちにpresenter
-        let searchVC = R.storyboard.search.search()!
-//        let searchNav = UINavigationController(rootViewController: searchVC)
-        searchVC.modalPresentationStyle = .fullScreen
-        searchVC.modalTransitionStyle = .crossDissolve
-        present(searchVC, animated: true, completion: nil)
-        
+        presenter.toSearch()
     }
     func giveLocation(vc: HotelListViewController) {
     
@@ -132,6 +127,15 @@ extension HomeController: CLLocationManagerDelegate {
     }
 }
 extension HomeController: HomeView {
+    func toSearch() {
+        let searchVC = R.storyboard.search.search()!
+        searchVC.nowLocation = nowLocation
+        let searchNav = UINavigationController(rootViewController: searchVC)
+        searchNav.modalPresentationStyle = .fullScreen
+        searchNav.modalTransitionStyle = .crossDissolve
+        present(searchNav, animated: true, completion: nil)
+    }
+    
     func locationBool() {
         getLocationBool = true
     }
