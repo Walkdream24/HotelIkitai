@@ -52,6 +52,7 @@
 		1405DD2324AC4A1400DAA3EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1405DD2624AC4A1400DAA3EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1405DD2824AC4A1400DAA3EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		146B021324C592B00091F510 /* ホテルイキタイ.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ホテルイキタイ.entitlements"; sourceTree = "<group>"; };
 		146ECA9224AC76C900E84A13 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		146ECA9424AC76D700E84A13 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		146ECA9624AC76E200E84A13 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
@@ -126,6 +127,7 @@
 		1405DD1924AC4A1100DAA3EC /* HotelIkitai */ = {
 			isa = PBXGroup;
 			children = (
+				146B021324C592B00091F510 /* ホテルイキタイ.entitlements */,
 				1499C66024ADD840003F8928 /* R.generated.swift */,
 				1405DD1A24AC4A1100DAA3EC /* AppDelegate.swift */,
 				146ECAA924AD6FA000E84A13 /* Extension.swift */,
@@ -540,7 +542,9 @@
 			baseConfigurationReference = 44D94F640947E809717D1A63 /* Pods-HotelIkitai.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "HotelIkitai/ホテルイキタイ.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 68V9SPDGA8;
 				INFOPLIST_FILE = HotelIkitai/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -559,7 +563,9 @@
 			baseConfigurationReference = 60A6093737BCAB5798EE3A3E /* Pods-HotelIkitai.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "HotelIkitai/ホテルイキタイ.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 68V9SPDGA8;
 				INFOPLIST_FILE = HotelIkitai/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
