@@ -30,12 +30,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 11 images.
+  /// This `R.image` struct is generated, and contains static references to 12 images.
   struct image {
     /// Image `bed`.
     static let bed = Rswift.ImageResource(bundle: R.hostingBundle, name: "bed")
     /// Image `callNumber`.
     static let callNumber = Rswift.ImageResource(bundle: R.hostingBundle, name: "callNumber")
+    /// Image `launchImage`.
+    static let launchImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "launchImage")
     /// Image `link`.
     static let link = Rswift.ImageResource(bundle: R.hostingBundle, name: "link")
     /// Image `map`.
@@ -63,6 +65,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "callNumber", bundle: ..., traitCollection: ...)`
     static func callNumber(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.callNumber, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "launchImage", bundle: ..., traitCollection: ...)`
+    static func launchImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.launchImage, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "link", bundle: ..., traitCollection: ...)`
@@ -363,6 +370,7 @@ struct _R: Rswift.Validatable {
       let name = "LaunchScreen"
       
       static func validate() throws {
+        if UIKit.UIImage(named: "launchImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'launchImage' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }

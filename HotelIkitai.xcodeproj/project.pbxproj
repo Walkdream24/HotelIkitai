@@ -47,7 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1405DD1724AC4A1100DAA3EC /* HotelIkitai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelIkitai.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1405DD1724AC4A1100DAA3EC /* ホテルイキタイ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ホテルイキタイ.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1405DD1A24AC4A1100DAA3EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1405DD2324AC4A1400DAA3EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1405DD2624AC4A1400DAA3EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -84,6 +84,7 @@
 		14C5D8B624C302D000B94D39 /* RMWeakSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMWeakSet.swift; sourceTree = "<group>"; };
 		14C5D8B824C3F07600B94D39 /* NothingResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NothingResultsView.swift; sourceTree = "<group>"; };
 		14C5D8BA24C3F09700B94D39 /* NothingResultsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NothingResultsView.xib; sourceTree = "<group>"; };
+		14C5D8BC24C4244800B94D39 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		14D9824B24AC4FA7007205F9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		44D94F640947E809717D1A63 /* Pods-HotelIkitai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelIkitai.debug.xcconfig"; path = "Target Support Files/Pods-HotelIkitai/Pods-HotelIkitai.debug.xcconfig"; sourceTree = "<group>"; };
 		60A6093737BCAB5798EE3A3E /* Pods-HotelIkitai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelIkitai.release.xcconfig"; path = "Target Support Files/Pods-HotelIkitai/Pods-HotelIkitai.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,7 +118,7 @@
 		1405DD1824AC4A1100DAA3EC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1405DD1724AC4A1100DAA3EC /* HotelIkitai.app */,
+				1405DD1724AC4A1100DAA3EC /* ホテルイキタイ.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -236,7 +237,7 @@
 			);
 			name = HotelIkitai;
 			productName = HotelIkitai;
-			productReference = 1405DD1724AC4A1100DAA3EC /* HotelIkitai.app */;
+			productReference = 1405DD1724AC4A1100DAA3EC /* ホテルイキタイ.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -261,6 +262,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 1405DD0E24AC4A1100DAA3EC;
 			productRefGroup = 1405DD1824AC4A1100DAA3EC /* Products */;
@@ -409,6 +411,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1405DD2624AC4A1400DAA3EC /* Base */,
+				14C5D8BC24C4244800B94D39 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -480,6 +484,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -543,7 +548,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.developwalkdream.HotelIkitai;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ホテルイキタイ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -562,7 +567,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.developwalkdream.HotelIkitai;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ホテルイキタイ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
