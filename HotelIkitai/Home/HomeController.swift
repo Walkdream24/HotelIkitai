@@ -14,6 +14,7 @@ import CoreLocation
 protocol HomeView: class {
     func updateLocation(placeName: String)
     func locationBool()
+    func toSearch()
     
 }
 class HomeController: ButtonBarPagerTabStripViewController{
@@ -72,6 +73,7 @@ class HomeController: ButtonBarPagerTabStripViewController{
         initializeLocationManager()
         requestAuthorization()
         setupLocationManagerIfNeeded()
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
      
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -80,20 +82,32 @@ class HomeController: ButtonBarPagerTabStripViewController{
     }
 
     @IBAction func searchButtonTapped(_ sender: Any) {
-        //のちにpresenter
-        let searchVC = R.storyboard.search.search()!
-//        let searchNav = UINavigationController(rootViewController: searchVC)
-        searchVC.modalPresentationStyle = .fullScreen
-        searchVC.modalTransitionStyle = .crossDissolve
-        present(searchVC, animated: true, completion: nil)
-        
+        presenter.toSearch()
+    }
+    func giveLocation(vc: HotelListViewController) {
+    
+        if nowLocation != nil {
+            vc.nowLocation = nowLocation
+        } else {
+            locationLoading(vc: vc)
+        }
+    }
+    
+    func locationLoading(vc: HotelListViewController) {
+        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 1.5) {
+            self.giveLocation(vc: vc)
+        }
     }
     
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         let reasonableList = HotelListViewController.instantiate(forType: .reasonable)
         let nearList = HotelListViewController.instantiate(forType: .near)
-        return [reasonableList, nearList]
+        giveLocation(vc: nearList)
+        locationLoading(vc: nearList)
+        giveLocation(vc: reasonableList)
+        locationLoading(vc: reasonableList)
+        return [nearList, reasonableList]
     }
 
 }
@@ -113,6 +127,15 @@ extension HomeController: CLLocationManagerDelegate {
     }
 }
 extension HomeController: HomeView {
+    func toSearch() {
+        let searchVC = R.storyboard.search.search()!
+        searchVC.nowLocation = nowLocation
+        let searchNav = UINavigationController(rootViewController: searchVC)
+        searchNav.modalPresentationStyle = .fullScreen
+        searchNav.modalTransitionStyle = .crossDissolve
+        present(searchNav, animated: true, completion: nil)
+    }
+    
     func locationBool() {
         getLocationBool = true
     }

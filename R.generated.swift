@@ -16,22 +16,14 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.file` struct is generated, and contains static references to 2 files.
+  /// This `R.file` struct is generated, and contains static references to 1 files.
   struct file {
     /// Resource file `GoogleService-Info.plist`.
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
-    /// Resource file `wakamizu.jpg`.
-    static let wakamizuJpg = Rswift.FileResource(bundle: R.hostingBundle, name: "wakamizu", pathExtension: "jpg")
     
     /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
     static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.googleServiceInfoPlist
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-    
-    /// `bundle.url(forResource: "wakamizu", withExtension: "jpg")`
-    static func wakamizuJpg(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.wakamizuJpg
       return fileResource.bundle.url(forResource: fileResource)
     }
     
@@ -44,6 +36,8 @@ struct R: Rswift.Validatable {
     static let bed = Rswift.ImageResource(bundle: R.hostingBundle, name: "bed")
     /// Image `callNumber`.
     static let callNumber = Rswift.ImageResource(bundle: R.hostingBundle, name: "callNumber")
+    /// Image `launchImage`.
+    static let launchImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "launchImage")
     /// Image `link`.
     static let link = Rswift.ImageResource(bundle: R.hostingBundle, name: "link")
     /// Image `map`.
@@ -62,8 +56,6 @@ struct R: Rswift.Validatable {
     static let stay = Rswift.ImageResource(bundle: R.hostingBundle, name: "stay")
     /// Image `train`.
     static let train = Rswift.ImageResource(bundle: R.hostingBundle, name: "train")
-    /// Image `wakamizu.jpg`.
-    static let wakamizuJpg = Rswift.ImageResource(bundle: R.hostingBundle, name: "wakamizu.jpg")
     
     /// `UIImage(named: "bed", bundle: ..., traitCollection: ...)`
     static func bed(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
@@ -73,6 +65,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "callNumber", bundle: ..., traitCollection: ...)`
     static func callNumber(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.callNumber, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "launchImage", bundle: ..., traitCollection: ...)`
+    static func launchImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.launchImage, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "link", bundle: ..., traitCollection: ...)`
@@ -120,20 +117,17 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.train, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "wakamizu.jpg", bundle: ..., traitCollection: ...)`
-    static func wakamizuJpg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.wakamizuJpg, compatibleWith: traitCollection)
-    }
-    
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
     /// Nib `EmptyView`.
     static let emptyView = _R.nib._EmptyView()
     /// Nib `HotelListCollectionViewCell`.
     static let hotelListCollectionViewCell = _R.nib._HotelListCollectionViewCell()
+    /// Nib `NothingResultsView`.
+    static let nothingResultsView = _R.nib._NothingResultsView()
     
     /// `UINib(name: "EmptyView", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.emptyView) instead")
@@ -147,12 +141,22 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.hotelListCollectionViewCell)
     }
     
+    /// `UINib(name: "NothingResultsView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.nothingResultsView) instead")
+    static func nothingResultsView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.nothingResultsView)
+    }
+    
     static func emptyView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> EmptyView? {
       return R.nib.emptyView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EmptyView
     }
     
     static func hotelListCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> HotelListCollectionViewCell? {
       return R.nib.hotelListCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? HotelListCollectionViewCell
+    }
+    
+    static func nothingResultsView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> NothingResultsView? {
+      return R.nib.nothingResultsView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NothingResultsView
     }
     
     fileprivate init() {}
@@ -166,7 +170,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 6 storyboards.
   struct storyboard {
     /// Storyboard `Home`.
     static let home = _R.storyboard.home()
@@ -176,6 +180,8 @@ struct R: Rswift.Validatable {
     static let hotelList = _R.storyboard.hotelList()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `SearchList`.
+    static let searchList = _R.storyboard.searchList()
     /// Storyboard `Search`.
     static let search = _R.storyboard.search()
     
@@ -202,6 +208,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Search", bundle: ...)`
     static func search(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.search)
+    }
+    
+    /// `UIStoryboard(name: "SearchList", bundle: ...)`
+    static func searchList(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.searchList)
     }
     
     fileprivate init() {}
@@ -263,6 +274,17 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
+    struct _NothingResultsView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "NothingResultsView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> NothingResultsView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NothingResultsView
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   
@@ -273,6 +295,7 @@ struct _R: Rswift.Validatable {
       try hotelList.validate()
       try launchScreen.validate()
       try search.validate()
+      try searchList.validate()
     }
     
     struct home: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
@@ -314,7 +337,6 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "rest", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'rest' is used in storyboard 'HotelDetail', but couldn't be loaded.") }
         if UIKit.UIImage(named: "stay", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'stay' is used in storyboard 'HotelDetail', but couldn't be loaded.") }
         if UIKit.UIImage(named: "train", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'train' is used in storyboard 'HotelDetail', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "wakamizu.jpg", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'wakamizu.jpg' is used in storyboard 'HotelDetail', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
         if _R.storyboard.hotelDetail().hotelDetail() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'hotelDetail' could not be loaded from storyboard 'HotelDetail' as 'HotelDetailViewController'.") }
@@ -348,6 +370,7 @@ struct _R: Rswift.Validatable {
       let name = "LaunchScreen"
       
       static func validate() throws {
+        if UIKit.UIImage(named: "launchImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'launchImage' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }
@@ -369,6 +392,24 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, *) {
         }
         if _R.storyboard.search().search() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'search' could not be loaded from storyboard 'Search' as 'SearchViewController'.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct searchList: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "SearchList"
+      let searchList = StoryboardViewControllerResource<SearchListViewController>(identifier: "SearchList")
+      
+      func searchList(_: Void = ()) -> SearchListViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: searchList)
+      }
+      
+      static func validate() throws {
+        if #available(iOS 11.0, *) {
+        }
+        if _R.storyboard.searchList().searchList() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'searchList' could not be loaded from storyboard 'SearchList' as 'SearchListViewController'.") }
       }
       
       fileprivate init() {}

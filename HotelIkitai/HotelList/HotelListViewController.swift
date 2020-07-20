@@ -14,8 +14,9 @@ import NVActivityIndicatorView
 protocol HotelListView: class {
     func presentActivityIndicator(message: String)
     func dismissActivityIndicator()
-    func toDetail()
+    func toDetail(hotel: HotelItem, restMin: Int, stayMin: Int, latitude: Double, longitude: Double, distance: Double)
     func reLoad()
+//    func location() -> CLLocation
 }
 class HotelListViewController: UIViewController {
     
@@ -24,10 +25,11 @@ class HotelListViewController: UIViewController {
     var latitude: CLLocationDegrees?
     var longitude: CLLocationDegrees?
     var nowLocation: CLLocation?
+    var hotelImageUrl: String?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.viewDidLoad()
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width:self.view.frame.width - 40, height:(self.view.frame.width - 40) * 0.95)
         layout.minimumLineSpacing = 30
@@ -36,11 +38,28 @@ class HotelListViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(R.nib.hotelListCollectionViewCell)
+        fetchedLocation()
 
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter.viewWillAppear()
+        
+    }
+    
+    func fetchedLocation() {
+        presenter.goActivityIndicator()
+        if nowLocation != nil {
+           self.presenter.viewWillAppear(nowLocation: self.nowLocation!)
+        } else {
+            locationLoading()
+        }
+    }
+    
+    func locationLoading() {
+        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 1.0) {
+            self.fetchedLocation()
+        }
     }
     
     static func instantiate(forType type: Category) -> HotelListViewController {
@@ -66,16 +85,31 @@ extension HotelListViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.hotelListCollectionViewCell, for: indexPath)!
         cell.configure(with: presenter.hotelItem[indexPath.item])
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter.toDetail()
+        hotelImageUrl = presenter.hotelItem[indexPath.item].imageUrl
+        presenter.toDetail(hotel: presenter.hotelItem[indexPath.row], restMin: presenter.hotelItem[indexPath.row].restMin, stayMin: presenter.hotelItem[indexPath.row].stayMin, latitude: presenter.hotelItem[indexPath.row].latitude, longitude: presenter.hotelItem[indexPath.row].longitude, distance: presenter.hotelItem[indexPath.row].distance)
     }
 
 }
 
 extension HotelListViewController: HotelListView, NVActivityIndicatorViewable {
+    
+    func toDetail(hotel: HotelItem, restMin: Int, stayMin: Int, latitude: Double, longitude: Double, distance: Double) {
+        let vc = HotelDetailViewController.instantiate(for: hotel)
+        vc.hotelImageUrl = hotelImageUrl
+        vc.restMin = restMin
+        vc.stayMin = stayMin
+        vc.latitude = latitude
+        vc.longitude = longitude
+        vc.distance = distance
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
     func reLoad() {
         collectionView.reloadData()
     }
@@ -88,10 +122,6 @@ extension HotelListViewController: HotelListView, NVActivityIndicatorViewable {
         stopAnimating()
     }
     
-    func toDetail() {
-        let vc = R.storyboard.hotelDetail.hotelDetail()!
-         navigationController?.pushViewController(vc, animated: true)
-    }
-    
     
 }
+

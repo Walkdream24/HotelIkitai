@@ -30,6 +30,7 @@ case near
 class HotelListModel {
     let categoryType: Category
     var items = [HotelItem]()
+    private let db = Firestore.firestore()
     weak var delegate: HotelListModelDelegate?
     
     
@@ -37,34 +38,42 @@ class HotelListModel {
         categoryType = type
     }
 
-    func fetchLocation(placeName: String) {
-        CLGeocoder().geocodeAddressString(placeName, completionHandler: { (placemarks, error) in
-            if let firstPlacemark = placemarks?.first, let location = firstPlacemark.location {
-                self.delegate?.hotelLocation(location: location, with: error)
-            } else {
-                print("nothing")
-            }
-        })
-    }
     
     func fetchDistance(nowLocation:CLLocation, destination: CLLocation) {
         let distance = destination.distance(from: nowLocation)
         delegate?.distanceFromNowLocation(distance: "\(distance)")
-        print("eeeeeeeee\(distance)")
     }
     
-    func fetchHotelListData() {
-        let query = Firestore.firestore().collection("HotelList")
-            .order(by:"stayMin", descending: false)
+    
+    func fetchHotelListData(nowLocation: CLLocation) {
+        var query: Query! = nil
+        let colRef = db.collection("HotelList")
+//        switch categoryType {
+//        case .reasonable:
+//            query = colRef.order(by:"stayMin", descending: false)
+//        case .near:
+//            query = colRef.order(by:"stayMin", descending: false)
+//        }
+        query = colRef.order(by:"stayMin", descending: false)
+        .whereField("stayMin", isLessThan: 900000)
         query.getDocuments { [weak self] (snapshot, error) in
              guard let `self` = self else { return }
              if let snapshot = snapshot {
-                self.items = snapshot.documents.map { HotelItem(from: $0.data(), docId: $0.documentID)}
-                print(self.items)
+                self.items = snapshot.documents.map { HotelItem(from: $0.data(), docId: $0.documentID, nowLocation: nowLocation)}
+                switch self.categoryType {
+                case .reasonable:
+                    print("配列操作ない")
+                case .near:
+                    self.items = self.items.sorted(by: { (a, b) -> Bool in
+                        return a.distance < b.distance
+                    })
+                }
              } else {
                 print("nothingDocuments")
             }
             self.delegate?.didFetchHotelList(with: error)
         }
     }
+    
+    
 }

@@ -22,6 +22,9 @@ class HomePresenter {
     func fetchLocation(location: CLLocation) {
         model.getPlaceName(location: location)
     }
+    func toSearch() {
+        view.toSearch()
+    }
 }
 
 extension HomePresenter: HomeModelDelegate {

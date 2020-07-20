@@ -24,6 +24,9 @@
 		146ECAAE24AD7F8C00E84A13 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 146ECAAD24AD7F8C00E84A13 /* EmptyView.xib */; };
 		146ECAB024AD867900E84A13 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146ECAAF24AD867900E84A13 /* SearchViewController.swift */; };
 		146ECAB424AD94C700E84A13 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 146ECAB324AD94C700E84A13 /* Search.storyboard */; };
+		146FE76F24B7060200DF1E7D /* HotelDetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FE76E24B7060200DF1E7D /* HotelDetailItem.swift */; };
+		146FE77124B707F600DF1E7D /* HotelDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FE77024B707F600DF1E7D /* HotelDetailModel.swift */; };
+		146FE77324B7081000DF1E7D /* HotelDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FE77224B7081000DF1E7D /* HotelDetailPresenter.swift */; };
 		147B67A524AEE07E00DABFF0 /* HotelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B67A424AEE07E00DABFF0 /* HotelDetailViewController.swift */; };
 		147B67A724AEE09100DABFF0 /* HotelDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147B67A624AEE09100DABFF0 /* HotelDetail.storyboard */; };
 		147B67A924AEE4C800DABFF0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 147B67A824AEE4C800DABFF0 /* CoreLocation.framework */; };
@@ -31,17 +34,25 @@
 		1499C66124ADD840003F8928 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499C66024ADD840003F8928 /* R.generated.swift */; };
 		1499C66424ADDB7D003F8928 /* HotelListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499C66224ADDB7D003F8928 /* HotelListCollectionViewCell.swift */; };
 		1499C66524ADDB7D003F8928 /* HotelListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1499C66324ADDB7D003F8928 /* HotelListCollectionViewCell.xib */; };
-		1499C66724ADDC9D003F8928 /* wakamizu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1499C66624ADDC9C003F8928 /* wakamizu.jpg */; };
 		14B4E76024B429E2003A0ACE /* HotelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B4E75F24B429E2003A0ACE /* HotelItem.swift */; };
+		14C5D8AB24C169AB00B94D39 /* StaticWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5D8AA24C169AB00B94D39 /* StaticWebViewController.swift */; };
+		14C5D8AD24C1923000B94D39 /* SearchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5D8AC24C1923000B94D39 /* SearchListViewController.swift */; };
+		14C5D8AF24C1924500B94D39 /* SearchListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5D8AE24C1924500B94D39 /* SearchListPresenter.swift */; };
+		14C5D8B124C1925400B94D39 /* SearchListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5D8B024C1925400B94D39 /* SearchListModel.swift */; };
+		14C5D8B324C1955300B94D39 /* SearchList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C5D8B224C1955300B94D39 /* SearchList.storyboard */; };
+		14C5D8B724C302D000B94D39 /* RMWeakSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5D8B624C302D000B94D39 /* RMWeakSet.swift */; };
+		14C5D8B924C3F07600B94D39 /* NothingResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5D8B824C3F07600B94D39 /* NothingResultsView.swift */; };
+		14C5D8BB24C3F09700B94D39 /* NothingResultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C5D8BA24C3F09700B94D39 /* NothingResultsView.xib */; };
 		14D9824C24AC4FA7007205F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14D9824B24AC4FA7007205F9 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1405DD1724AC4A1100DAA3EC /* HotelIkitai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelIkitai.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1405DD1724AC4A1100DAA3EC /* ホテルイキタイ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ホテルイキタイ.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1405DD1A24AC4A1100DAA3EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1405DD2324AC4A1400DAA3EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1405DD2624AC4A1400DAA3EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1405DD2824AC4A1400DAA3EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		146B021324C592B00091F510 /* ホテルイキタイ.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ホテルイキタイ.entitlements"; sourceTree = "<group>"; };
 		146ECA9224AC76C900E84A13 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		146ECA9424AC76D700E84A13 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		146ECA9624AC76E200E84A13 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
@@ -55,6 +66,9 @@
 		146ECAAD24AD7F8C00E84A13 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		146ECAAF24AD867900E84A13 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		146ECAB324AD94C700E84A13 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		146FE76E24B7060200DF1E7D /* HotelDetailItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailItem.swift; sourceTree = "<group>"; };
+		146FE77024B707F600DF1E7D /* HotelDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailModel.swift; sourceTree = "<group>"; };
+		146FE77224B7081000DF1E7D /* HotelDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailPresenter.swift; sourceTree = "<group>"; };
 		147B67A424AEE07E00DABFF0 /* HotelDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailViewController.swift; sourceTree = "<group>"; };
 		147B67A624AEE09100DABFF0 /* HotelDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HotelDetail.storyboard; sourceTree = "<group>"; };
 		147B67A824AEE4C800DABFF0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -62,8 +76,16 @@
 		1499C66024ADD840003F8928 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		1499C66224ADDB7D003F8928 /* HotelListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelListCollectionViewCell.swift; sourceTree = "<group>"; };
 		1499C66324ADDB7D003F8928 /* HotelListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelListCollectionViewCell.xib; sourceTree = "<group>"; };
-		1499C66624ADDC9C003F8928 /* wakamizu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wakamizu.jpg; sourceTree = "<group>"; };
 		14B4E75F24B429E2003A0ACE /* HotelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelItem.swift; sourceTree = "<group>"; };
+		14C5D8AA24C169AB00B94D39 /* StaticWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticWebViewController.swift; sourceTree = "<group>"; };
+		14C5D8AC24C1923000B94D39 /* SearchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListViewController.swift; sourceTree = "<group>"; };
+		14C5D8AE24C1924500B94D39 /* SearchListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListPresenter.swift; sourceTree = "<group>"; };
+		14C5D8B024C1925400B94D39 /* SearchListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListModel.swift; sourceTree = "<group>"; };
+		14C5D8B224C1955300B94D39 /* SearchList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchList.storyboard; sourceTree = "<group>"; };
+		14C5D8B624C302D000B94D39 /* RMWeakSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMWeakSet.swift; sourceTree = "<group>"; };
+		14C5D8B824C3F07600B94D39 /* NothingResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NothingResultsView.swift; sourceTree = "<group>"; };
+		14C5D8BA24C3F09700B94D39 /* NothingResultsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NothingResultsView.xib; sourceTree = "<group>"; };
+		14C5D8BC24C4244800B94D39 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		14D9824B24AC4FA7007205F9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		44D94F640947E809717D1A63 /* Pods-HotelIkitai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelIkitai.debug.xcconfig"; path = "Target Support Files/Pods-HotelIkitai/Pods-HotelIkitai.debug.xcconfig"; sourceTree = "<group>"; };
 		60A6093737BCAB5798EE3A3E /* Pods-HotelIkitai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelIkitai.release.xcconfig"; path = "Target Support Files/Pods-HotelIkitai/Pods-HotelIkitai.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,7 +119,7 @@
 		1405DD1824AC4A1100DAA3EC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1405DD1724AC4A1100DAA3EC /* HotelIkitai.app */,
+				1405DD1724AC4A1100DAA3EC /* ホテルイキタイ.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,12 +127,14 @@
 		1405DD1924AC4A1100DAA3EC /* HotelIkitai */ = {
 			isa = PBXGroup;
 			children = (
+				146B021324C592B00091F510 /* ホテルイキタイ.entitlements */,
 				1499C66024ADD840003F8928 /* R.generated.swift */,
 				1405DD1A24AC4A1100DAA3EC /* AppDelegate.swift */,
 				146ECAA924AD6FA000E84A13 /* Extension.swift */,
 				147B67A324AEDC8600DABFF0 /* Home */,
 				147B67A024AEDC1F00DABFF0 /* HotelList */,
-				1499C66624ADDC9C003F8928 /* wakamizu.jpg */,
+				147B67A224AEDC6F00DABFF0 /* Detail */,
+				147B67A124AEDC4F00DABFF0 /* Search */,
 				1405DD2324AC4A1400DAA3EC /* Assets.xcassets */,
 				1405DD2524AC4A1400DAA3EC /* LaunchScreen.storyboard */,
 				1405DD2824AC4A1400DAA3EC /* Info.plist */,
@@ -129,8 +153,6 @@
 				14B4E75F24B429E2003A0ACE /* HotelItem.swift */,
 				1499C66224ADDB7D003F8928 /* HotelListCollectionViewCell.swift */,
 				1499C66324ADDB7D003F8928 /* HotelListCollectionViewCell.xib */,
-				147B67A224AEDC6F00DABFF0 /* Detail */,
-				147B67A124AEDC4F00DABFF0 /* Search */,
 			);
 			path = HotelList;
 			sourceTree = "<group>";
@@ -138,10 +160,17 @@
 		147B67A124AEDC4F00DABFF0 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				146ECAAF24AD867900E84A13 /* SearchViewController.swift */,
 				146ECAB324AD94C700E84A13 /* Search.storyboard */,
+				146ECAAF24AD867900E84A13 /* SearchViewController.swift */,
+				14C5D8B224C1955300B94D39 /* SearchList.storyboard */,
+				14C5D8AC24C1923000B94D39 /* SearchListViewController.swift */,
+				14C5D8AE24C1924500B94D39 /* SearchListPresenter.swift */,
+				14C5D8B024C1925400B94D39 /* SearchListModel.swift */,
+				14C5D8B624C302D000B94D39 /* RMWeakSet.swift */,
 				146ECAAB24AD7F7800E84A13 /* EmptyView.swift */,
 				146ECAAD24AD7F8C00E84A13 /* EmptyView.xib */,
+				14C5D8B824C3F07600B94D39 /* NothingResultsView.swift */,
+				14C5D8BA24C3F09700B94D39 /* NothingResultsView.xib */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -149,8 +178,12 @@
 		147B67A224AEDC6F00DABFF0 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				147B67A424AEE07E00DABFF0 /* HotelDetailViewController.swift */,
 				147B67A624AEE09100DABFF0 /* HotelDetail.storyboard */,
+				147B67A424AEE07E00DABFF0 /* HotelDetailViewController.swift */,
+				146FE77224B7081000DF1E7D /* HotelDetailPresenter.swift */,
+				146FE77024B707F600DF1E7D /* HotelDetailModel.swift */,
+				146FE76E24B7060200DF1E7D /* HotelDetailItem.swift */,
+				14C5D8AA24C169AB00B94D39 /* StaticWebViewController.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -206,7 +239,7 @@
 			);
 			name = HotelIkitai;
 			productName = HotelIkitai;
-			productReference = 1405DD1724AC4A1100DAA3EC /* HotelIkitai.app */;
+			productReference = 1405DD1724AC4A1100DAA3EC /* ホテルイキタイ.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -231,6 +264,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 1405DD0E24AC4A1100DAA3EC;
 			productRefGroup = 1405DD1824AC4A1100DAA3EC /* Products */;
@@ -247,10 +281,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14C5D8B324C1955300B94D39 /* SearchList.storyboard in Resources */,
 				1405DD2724AC4A1400DAA3EC /* LaunchScreen.storyboard in Resources */,
+				14C5D8BB24C3F09700B94D39 /* NothingResultsView.xib in Resources */,
 				14D9824C24AC4FA7007205F9 /* GoogleService-Info.plist in Resources */,
 				1405DD2424AC4A1400DAA3EC /* Assets.xcassets in Resources */,
-				1499C66724ADDC9D003F8928 /* wakamizu.jpg in Resources */,
 				146ECAA124AC930400E84A13 /* HotelList.storyboard in Resources */,
 				146ECAB424AD94C700E84A13 /* Search.storyboard in Resources */,
 				146ECAAE24AD7F8C00E84A13 /* EmptyView.xib in Resources */,
@@ -346,19 +381,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				146ECA9724AC76E200E84A13 /* HomeModel.swift in Sources */,
+				14C5D8B724C302D000B94D39 /* RMWeakSet.swift in Sources */,
+				146FE77124B707F600DF1E7D /* HotelDetailModel.swift in Sources */,
 				146ECAB024AD867900E84A13 /* SearchViewController.swift in Sources */,
 				146ECA9B24AC881A00E84A13 /* HotelListViewController.swift in Sources */,
 				146ECA9524AC76D700E84A13 /* HomePresenter.swift in Sources */,
 				146ECA9324AC76C900E84A13 /* HomeController.swift in Sources */,
 				1499C66424ADDB7D003F8928 /* HotelListCollectionViewCell.swift in Sources */,
+				14C5D8AB24C169AB00B94D39 /* StaticWebViewController.swift in Sources */,
+				146FE77324B7081000DF1E7D /* HotelDetailPresenter.swift in Sources */,
 				146ECAAA24AD6FA000E84A13 /* Extension.swift in Sources */,
+				14C5D8B124C1925400B94D39 /* SearchListModel.swift in Sources */,
+				146FE76F24B7060200DF1E7D /* HotelDetailItem.swift in Sources */,
 				146ECAAC24AD7F7800E84A13 /* EmptyView.swift in Sources */,
 				146ECA9F24AC884600E84A13 /* HotelListModel.swift in Sources */,
 				14B4E76024B429E2003A0ACE /* HotelItem.swift in Sources */,
+				14C5D8AF24C1924500B94D39 /* SearchListPresenter.swift in Sources */,
 				1405DD1B24AC4A1100DAA3EC /* AppDelegate.swift in Sources */,
+				14C5D8AD24C1923000B94D39 /* SearchListViewController.swift in Sources */,
 				1499C66124ADD840003F8928 /* R.generated.swift in Sources */,
 				147B67A524AEE07E00DABFF0 /* HotelDetailViewController.swift in Sources */,
 				146ECA9D24AC883600E84A13 /* HotelListPresenter.swift in Sources */,
+				14C5D8B924C3F07600B94D39 /* NothingResultsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +413,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1405DD2624AC4A1400DAA3EC /* Base */,
+				14C5D8BC24C4244800B94D39 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -380,6 +425,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -440,6 +486,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -495,7 +542,9 @@
 			baseConfigurationReference = 44D94F640947E809717D1A63 /* Pods-HotelIkitai.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "HotelIkitai/ホテルイキタイ.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 68V9SPDGA8;
 				INFOPLIST_FILE = HotelIkitai/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -503,7 +552,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.developwalkdream.HotelIkitai;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ホテルイキタイ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -514,7 +563,9 @@
 			baseConfigurationReference = 60A6093737BCAB5798EE3A3E /* Pods-HotelIkitai.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "HotelIkitai/ホテルイキタイ.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 68V9SPDGA8;
 				INFOPLIST_FILE = HotelIkitai/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -522,7 +573,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.developwalkdream.HotelIkitai;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ホテルイキタイ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

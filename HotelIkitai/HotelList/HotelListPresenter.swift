@@ -23,22 +23,24 @@ class HotelListPresenter {
         model.delegate = self
     }
     
-    func toDetail() {
-        view?.toDetail()
+    func toDetail(hotel: HotelItem, restMin: Int, stayMin: Int, latitude: Double, longitude: Double, distance: Double) {
+        view?.toDetail(hotel: hotel, restMin: restMin, stayMin: stayMin, latitude: latitude, longitude: longitude, distance: distance)
     }
-    func viewDidLoad() {
-        model.fetchLocation(placeName: "東京都武蔵野市御殿山１丁目３−３")
-    }
-    func viewWillAppear() {
+    
+ 
+    func viewWillAppear(nowLocation: CLLocation) {
         if firstTime {
-            model.fetchHotelListData()
+            model.fetchHotelListData(nowLocation: nowLocation)
             firstTime = false
         }
+    }
+
+    func goActivityIndicator() {
+        view!.presentActivityIndicator(message: "読み込み中...")
     }
 }
 extension HotelListPresenter: HotelListModelDelegate {
     func didFetchHotelList(with error: Error?) {
-        view!.presentActivityIndicator(message: "読み込み中...")
         if error != nil {
             view?.dismissActivityIndicator()
             print("eeeeeeerrorrrrrrrrrrrrrrrrr\(String(describing: error?.localizedDescription))")
@@ -58,7 +60,7 @@ extension HotelListPresenter: HotelListModelDelegate {
         if error != nil {
             print("error")
         } else {
-//            model.fetchDistance(nowLocation: <#T##CLLocation#>, destination: location)
+//            model.fetchDistance(nowLocation: , destination: location)
         }
     }
     

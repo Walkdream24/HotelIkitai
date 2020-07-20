@@ -48,6 +48,8 @@ class HotelListCollectionViewCell: UICollectionViewCell {
         restMinLabel.text = "¥\(hotelItem.restMin)"
         stayMinLabel.text = "¥\(hotelItem.stayMin)"
         areaLabel.text = hotelItem.area
+        let distance = "\(hotelItem.distance)".prefix(3)
+        distanceLabel.text = "現在地から\(distance)km"
     }
     
 
