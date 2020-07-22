@@ -20,6 +20,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         GADMobileAds.sharedInstance().start(completionHandler: nil)
+
+        let userDefault = UserDefaults.standard
+        let dict = ["firstLaunch" : true]
+        userDefault.register(defaults: dict)
+        
+        if userDefault.bool(forKey: "firstLaunch") {
+            let tutorialVc = R.storyboard.tutorial.tutorial()!
+            let navigationController = UINavigationController(rootViewController: tutorialVc)
+            self.window?.rootViewController = navigationController
+            self.window?.makeKeyAndVisible()
+        } else {
+            let homeVc = R.storyboard.home.home()!
+            self.window?.rootViewController = homeVc
+            let navigationController = UINavigationController(rootViewController: homeVc)
+            self.window?.rootViewController = navigationController
+            self.window?.makeKeyAndVisible()
+        }
         
         if #available(iOS 10.0, *) {
           // For iOS 10 display notification (sent via APNS)

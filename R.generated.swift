@@ -30,7 +30,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 12 images.
+  /// This `R.image` struct is generated, and contains static references to 14 images.
   struct image {
     /// Image `bed`.
     static let bed = Rswift.ImageResource(bundle: R.hostingBundle, name: "bed")
@@ -40,6 +40,8 @@ struct R: Rswift.Validatable {
     static let launchImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "launchImage")
     /// Image `link`.
     static let link = Rswift.ImageResource(bundle: R.hostingBundle, name: "link")
+    /// Image `locationAllow`.
+    static let locationAllow = Rswift.ImageResource(bundle: R.hostingBundle, name: "locationAllow")
     /// Image `map`.
     static let map = Rswift.ImageResource(bundle: R.hostingBundle, name: "map")
     /// Image `marker`.
@@ -56,6 +58,8 @@ struct R: Rswift.Validatable {
     static let stay = Rswift.ImageResource(bundle: R.hostingBundle, name: "stay")
     /// Image `train`.
     static let train = Rswift.ImageResource(bundle: R.hostingBundle, name: "train")
+    /// Image `tutorialBG`.
+    static let tutorialBG = Rswift.ImageResource(bundle: R.hostingBundle, name: "tutorialBG")
     
     /// `UIImage(named: "bed", bundle: ..., traitCollection: ...)`
     static func bed(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
@@ -75,6 +79,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "link", bundle: ..., traitCollection: ...)`
     static func link(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.link, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "locationAllow", bundle: ..., traitCollection: ...)`
+    static func locationAllow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.locationAllow, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "map", bundle: ..., traitCollection: ...)`
@@ -115,6 +124,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "train", bundle: ..., traitCollection: ...)`
     static func train(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.train, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "tutorialBG", bundle: ..., traitCollection: ...)`
+    static func tutorialBG(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tutorialBG, compatibleWith: traitCollection)
     }
     
     fileprivate init() {}
@@ -170,7 +184,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 6 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 7 storyboards.
   struct storyboard {
     /// Storyboard `Home`.
     static let home = _R.storyboard.home()
@@ -184,6 +198,8 @@ struct R: Rswift.Validatable {
     static let searchList = _R.storyboard.searchList()
     /// Storyboard `Search`.
     static let search = _R.storyboard.search()
+    /// Storyboard `Tutorial`.
+    static let tutorial = _R.storyboard.tutorial()
     
     /// `UIStoryboard(name: "Home", bundle: ...)`
     static func home(_: Void = ()) -> UIKit.UIStoryboard {
@@ -213,6 +229,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "SearchList", bundle: ...)`
     static func searchList(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.searchList)
+    }
+    
+    /// `UIStoryboard(name: "Tutorial", bundle: ...)`
+    static func tutorial(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.tutorial)
     }
     
     fileprivate init() {}
@@ -296,6 +317,7 @@ struct _R: Rswift.Validatable {
       try launchScreen.validate()
       try search.validate()
       try searchList.validate()
+      try tutorial.validate()
     }
     
     struct home: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
@@ -410,6 +432,26 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, *) {
         }
         if _R.storyboard.searchList().searchList() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'searchList' could not be loaded from storyboard 'SearchList' as 'SearchListViewController'.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct tutorial: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "Tutorial"
+      let tutorial = StoryboardViewControllerResource<TutorialViewController>(identifier: "Tutorial")
+      
+      func tutorial(_: Void = ()) -> TutorialViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: tutorial)
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "locationAllow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'locationAllow' is used in storyboard 'Tutorial', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "tutorialBG", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'tutorialBG' is used in storyboard 'Tutorial', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
+        if _R.storyboard.tutorial().tutorial() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'tutorial' could not be loaded from storyboard 'Tutorial' as 'TutorialViewController'.") }
       }
       
       fileprivate init() {}

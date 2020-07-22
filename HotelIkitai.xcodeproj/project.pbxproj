@@ -27,6 +27,8 @@
 		146FE76F24B7060200DF1E7D /* HotelDetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FE76E24B7060200DF1E7D /* HotelDetailItem.swift */; };
 		146FE77124B707F600DF1E7D /* HotelDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FE77024B707F600DF1E7D /* HotelDetailModel.swift */; };
 		146FE77324B7081000DF1E7D /* HotelDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FE77224B7081000DF1E7D /* HotelDetailPresenter.swift */; };
+		1477B21024C8193E00164A27 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1477B20F24C8193D00164A27 /* TutorialViewController.swift */; };
+		1477B21224C8194800164A27 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1477B21124C8194800164A27 /* Tutorial.storyboard */; };
 		147B67A524AEE07E00DABFF0 /* HotelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B67A424AEE07E00DABFF0 /* HotelDetailViewController.swift */; };
 		147B67A724AEE09100DABFF0 /* HotelDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147B67A624AEE09100DABFF0 /* HotelDetail.storyboard */; };
 		147B67A924AEE4C800DABFF0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 147B67A824AEE4C800DABFF0 /* CoreLocation.framework */; };
@@ -69,6 +71,8 @@
 		146FE76E24B7060200DF1E7D /* HotelDetailItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailItem.swift; sourceTree = "<group>"; };
 		146FE77024B707F600DF1E7D /* HotelDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailModel.swift; sourceTree = "<group>"; };
 		146FE77224B7081000DF1E7D /* HotelDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailPresenter.swift; sourceTree = "<group>"; };
+		1477B20F24C8193D00164A27 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		1477B21124C8194800164A27 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		147B67A424AEE07E00DABFF0 /* HotelDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailViewController.swift; sourceTree = "<group>"; };
 		147B67A624AEE09100DABFF0 /* HotelDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HotelDetail.storyboard; sourceTree = "<group>"; };
 		147B67A824AEE4C800DABFF0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -131,6 +135,7 @@
 				1499C66024ADD840003F8928 /* R.generated.swift */,
 				1405DD1A24AC4A1100DAA3EC /* AppDelegate.swift */,
 				146ECAA924AD6FA000E84A13 /* Extension.swift */,
+				1477B20E24C8036900164A27 /* Tutorial */,
 				147B67A324AEDC8600DABFF0 /* Home */,
 				147B67A024AEDC1F00DABFF0 /* HotelList */,
 				147B67A224AEDC6F00DABFF0 /* Detail */,
@@ -141,6 +146,15 @@
 				14D9824B24AC4FA7007205F9 /* GoogleService-Info.plist */,
 			);
 			path = HotelIkitai;
+			sourceTree = "<group>";
+		};
+		1477B20E24C8036900164A27 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				1477B20F24C8193D00164A27 /* TutorialViewController.swift */,
+				1477B21124C8194800164A27 /* Tutorial.storyboard */,
+			);
+			path = Tutorial;
 			sourceTree = "<group>";
 		};
 		147B67A024AEDC1F00DABFF0 /* HotelList */ = {
@@ -291,6 +305,7 @@
 				146ECAAE24AD7F8C00E84A13 /* EmptyView.xib in Resources */,
 				146ECA9924AC76F300E84A13 /* Home.storyboard in Resources */,
 				147B67A724AEE09100DABFF0 /* HotelDetail.storyboard in Resources */,
+				1477B21224C8194800164A27 /* Tutorial.storyboard in Resources */,
 				1499C66524ADDB7D003F8928 /* HotelListCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +405,7 @@
 				1499C66424ADDB7D003F8928 /* HotelListCollectionViewCell.swift in Sources */,
 				14C5D8AB24C169AB00B94D39 /* StaticWebViewController.swift in Sources */,
 				146FE77324B7081000DF1E7D /* HotelDetailPresenter.swift in Sources */,
+				1477B21024C8193E00164A27 /* TutorialViewController.swift in Sources */,
 				146ECAAA24AD6FA000E84A13 /* Extension.swift in Sources */,
 				14C5D8B124C1925400B94D39 /* SearchListModel.swift in Sources */,
 				146FE76F24B7060200DF1E7D /* HotelDetailItem.swift in Sources */,
@@ -544,9 +560,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "HotelIkitai/ホテルイキタイ.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 68V9SPDGA8;
 				INFOPLIST_FILE = HotelIkitai/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -554,7 +571,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.developwalkdream.HotelIkitai;
 				PRODUCT_NAME = "ホテルイキタイ";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -565,9 +582,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "HotelIkitai/ホテルイキタイ.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 68V9SPDGA8;
 				INFOPLIST_FILE = HotelIkitai/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -575,7 +593,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.developwalkdream.HotelIkitai;
 				PRODUCT_NAME = "ホテルイキタイ";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

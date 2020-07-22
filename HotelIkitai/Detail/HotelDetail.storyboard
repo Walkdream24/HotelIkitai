@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,7 +11,7 @@
         <!--Hotel Detail View Controller-->
         <scene sceneID="dUp-Q7-in3">
             <objects>
-                <viewController storyboardIdentifier="HotelDetail" automaticallyAdjustsScrollViewInsets="NO" id="DZv-cN-usB" customClass="HotelDetailViewController" customModule="HotelIkitai" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HotelDetail" automaticallyAdjustsScrollViewInsets="NO" id="DZv-cN-usB" customClass="HotelDetailViewController" customModule="ホテルイキタイ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iia-Oa-2DK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -319,6 +320,7 @@
                                             <constraint firstItem="ySI-b5-2UU" firstAttribute="centerX" secondItem="xeg-no-GfS" secondAttribute="centerX" id="M46-8L-2wx"/>
                                             <constraint firstItem="t3Y-Yh-9qp" firstAttribute="centerY" secondItem="9h5-sW-ISd" secondAttribute="centerY" id="MUv-lw-pdZ"/>
                                             <constraint firstItem="bmC-JO-cgu" firstAttribute="leading" secondItem="FFd-W8-feY" secondAttribute="leading" id="P5q-jE-JH0"/>
+                                            <constraint firstItem="wbZ-3D-jgL" firstAttribute="top" secondItem="B5t-YB-97L" secondAttribute="bottom" constant="12" id="PBA-OL-dPX"/>
                                             <constraint firstItem="zRK-BM-qFA" firstAttribute="top" secondItem="XLz-I7-gol" secondAttribute="bottom" constant="13.5" id="QEA-Sn-REG"/>
                                             <constraint firstItem="FFd-W8-feY" firstAttribute="baseline" secondItem="TV7-DV-xTZ" secondAttribute="baseline" id="RCt-oP-FZq"/>
                                             <constraint firstItem="dei-7b-chv" firstAttribute="leading" secondItem="TV7-DV-xTZ" secondAttribute="leading" id="RLh-2s-l1T"/>

@@ -80,7 +80,7 @@ class HotelDetailViewController: UIViewController, GADBannerViewDelegate {
         bannerView.adUnitID = "ca-app-pub-3343885117344222/5948871302"
         bannerView.rootViewController = self
         let request = GADRequest()
-//        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = ["c1b7d6a29562e5694007f76016521714"]
+        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = ["c1b7d6a29562e5694007f76016521714"]
         bannerView.load(request)
         bannerView.delegate = self
     }
@@ -91,7 +91,7 @@ class HotelDetailViewController: UIViewController, GADBannerViewDelegate {
         bannerView.adUnitID = "ca-app-pub-3343885117344222/5948871302"
         bannerView.rootViewController = self
         let request = GADRequest()
-//        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = ["c1b7d6a29562e5694007f76016521714"]
+        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = ["c1b7d6a29562e5694007f76016521714"]
         bannerView.load(request)
         bannerView.delegate = self
      }
