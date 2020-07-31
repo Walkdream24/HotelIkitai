@@ -33,9 +33,9 @@ class HomeController: ButtonBarPagerTabStripViewController{
         locationManager = CLLocationManager()
     }
     
-    fileprivate func requestAuthorization() {
-        locationManager.requestWhenInUseAuthorization()
-    }
+//    fileprivate func requestAuthorization() {
+//        locationManager.requestWhenInUseAuthorization()
+//    }
     
     fileprivate func setupLocationManagerIfNeeded() {
         let status = CLLocationManager.authorizationStatus()
@@ -71,9 +71,10 @@ class HomeController: ButtonBarPagerTabStripViewController{
         presenter = HomePresenter(view: self)
         fieldFrameView.layer.cornerRadius = 6
         initializeLocationManager()
-        requestAuthorization()
+//        requestAuthorization()
         setupLocationManagerIfNeeded()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
      
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -89,7 +90,10 @@ class HomeController: ButtonBarPagerTabStripViewController{
         if nowLocation != nil {
             vc.nowLocation = nowLocation
         } else {
-            locationLoading(vc: vc)
+            let status = CLLocationManager.authorizationStatus()
+            if status == .authorizedWhenInUse || status == .authorizedAlways {
+                locationLoading(vc: vc)
+            }
         }
     }
     
@@ -103,18 +107,19 @@ class HomeController: ButtonBarPagerTabStripViewController{
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         let reasonableList = HotelListViewController.instantiate(forType: .reasonable)
         let nearList = HotelListViewController.instantiate(forType: .near)
-        giveLocation(vc: nearList)
-        locationLoading(vc: nearList)
-        giveLocation(vc: reasonableList)
-        locationLoading(vc: reasonableList)
+            giveLocation(vc: nearList)
+            locationLoading(vc: nearList)
+            giveLocation(vc: reasonableList)
+            locationLoading(vc: reasonableList)
         return [nearList, reasonableList]
     }
 
 }
 extension HomeController: CLLocationManagerDelegate {
     
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error.localizedDescription)
+        print("eeeeeeeeeeeeeee\(error.localizedDescription)")
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

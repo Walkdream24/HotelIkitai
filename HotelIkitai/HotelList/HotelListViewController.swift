@@ -26,6 +26,7 @@ class HotelListViewController: UIViewController {
     var longitude: CLLocationDegrees?
     var nowLocation: CLLocation?
     var hotelImageUrl: String?
+    let status = CLLocationManager.authorizationStatus()
     
 
     override func viewDidLoad() {
@@ -38,13 +39,21 @@ class HotelListViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(R.nib.hotelListCollectionViewCell)
-        fetchedLocation()
+        if status == .authorizedWhenInUse || status == .authorizedAlways {
+            fetchedLocation()
+        } else {
+            presentAlert()
+            nowLocation = CLLocation(latitude: 35.6809591, longitude: 139.7673068)
+            fetchedLocation()
+        }
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+//        if !(status == .authorizedWhenInUse || status == .authorizedAlways) {
+//            presentAlert()
+//        }
     }
     
     func fetchedLocation() {
@@ -60,6 +69,27 @@ class HotelListViewController: UIViewController {
         DispatchQueue.main.asyncAfter(wallDeadline: .now() + 1.0) {
             self.fetchedLocation()
         }
+    }
+    func presentAlert() {
+             let alert: UIAlertController = UIAlertController(title: "位置情報の許可お願いします", message: "位置情報の許可が認められないと近くのホテルを表示できません🥺\nデフォルトで東京駅になってます...", preferredStyle:  UIAlertController.Style.alert)
+             
+             let defaultAction: UIAlertAction = UIAlertAction(title: "設定画面へ", style: UIAlertAction.Style.default, handler:{
+                 (action: UIAlertAction!) -> Void in
+                 print("OK")
+                if let url = URL(string: UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+                
+             })
+             // キャンセルボタン
+             let cancelAction: UIAlertAction = UIAlertAction(title: "あとで", style: UIAlertAction.Style.cancel, handler:{
+                 (action: UIAlertAction!) -> Void in
+                 print("Cancel")
+             })
+             alert.addAction(cancelAction)
+             alert.addAction(defaultAction)
+             present(alert, animated: true)
+         
     }
     
     static func instantiate(forType type: Category) -> HotelListViewController {
